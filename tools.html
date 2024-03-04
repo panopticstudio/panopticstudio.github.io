@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>CMU Panoptic Dataset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>   
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+		
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72129944-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+</head>
+<body>
+  
+
+	<!-- dataset.html -->
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="handdb.html">HandDB<span class="sr-only">(current)</span></a></li>
+			<li><a href="ptclouddb.html">PtCloudDB<span class="sr-only">(current)</span></a></li>
+      <li><a href="mtc.html">Monocular MoCap<span class="sr-only">(current)</span></a></li>
+      <li><a href="ssp.html">Social Signal Prediction<span class="sr-only">(current)</span></a></li>
+			<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+			<li><a href="references.html">References<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    <div class="container">
+	<h2>PanopticStudio Toolbox</h2>
+	<ul>
+		<li> Download the <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox"><b>PanopticStudio Toolbox</b> on GitHub</a> (Matlab and Python usage examples included).
+		<li> With the <b>PanopticStudio Toolbox</b>, you can
+			<ul>
+				<li> Download the data as compressed video files
+				<li> Extract images from downloaded videos
+				<li> Load camera calibration parameters
+				<li> Load 3D pose reconstruction results
+				<li> Project 3D pose to 2D camera views
+			</ul>
+	</ul>
+	
+	<!--h2>Downloading the Data</h2>
+	<ul>
+		<li> You can easily download our dataset using the <code>./getData.sh</code> script, which can be obtained from <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox">GitHub</a>. </li>
+		<li> <code>getData.sh</code> works on Linux and Mac, or on Windows using <a href="https://www.cygwin.com/">Cygwin</a>. </li>
+		<li> The basic usage is: <code>./getData.sh {sequence name} {number of VGA cameras} {number of HD cameras}</code> </li>
+		<li> For example, you can download a small sample dataset (~5 MB), named <b>171204_pose1_sample</b>, with a default of 10 VGA cameras and 1 HD camera, via 
+		<pre>./getData.sh 171204_pose1_sample</pre> </li>
+		<li> Browse various sequences in this website. Select the sequences you are interested in. Download the data using the sequence name. For example,
+		<pre>./getData.sh 160422_ultimatum</pre> </li>
+		<li> You can also specify the number of cameras you want to download. For example, to download <b>240</b> VGA videos and <b>5</b> HD videos
+		<pre>./getData.sh 160422_ultimatum 240 5</pre></li>
+		<li> In the script, we have sorted the VGA camera order so that you download uniformly distributed views given the specified number of views. </li>
+	</ul>
+	
+	<h2>Camera Naming Rule</h2>
+	<ul>
+	 <li> Camera names are given by <b>{sensorIdx}_{nodeIdx}</b>  </li>
+	 <li> The <b>{sensorIdx}</b> is represented as a two digit number, and can be one of the following: </li>
+		<ul>
+		<li> 00: for HD cameras</li>
+		<li> 01-20: for VGA cameras, where the number denotes a VGA module (panel) index</li>
+		<li> 50: for Kinect RGB cameras</li>
+		</ul>
+	 <li> The <b>nodeIdx</b> represents a camera index within each sensor type (or each module in VGAs). </li>
+	 <li> Each VGA module has 24 cameras, so <b>nodeIdx</b> in each VGA module ranges from 1 to 24. </li>
+	 <li> In summary, </li>
+	 <ul>
+		<li> HD (31 cameras): <b>00_00</b> ~ <b>00_30</b> </li>
+		<li> VGA (24 cameras/module): <b>01_01</b> ~ <b>01_24</b> through <b>20_01</b> ~ <b>20_24</b> </li>
+		<li> Kinect (10 cameras): <b>50_01</b> ~ <b>50_10</b> </li>
+	</ul>		
+	 <li> HD nodeIdx is zero-based, while the nodeIdx of VGA and Kinects are one-based. </li>
+	 <li> Note that the order of the camera indices has nothing to do with their locations. VGA module 1 and VGA module 2 may not be neighboring panels. </li>
+	</ul>
+
+
+	<h2>Calibration Data</h2>
+	<ul>	
+	<li>Calibration parameters for all cameras (VGAs, HDs, and Kinects) are provided as a JSON file. </li>
+	<li>Each camera is an element in the "cameras" array, with the following information:
+	<pre width="80%">
+"cameras": [
+	{
+		"name": "01_01", <br>
+		"type": "vga",
+		"resolution": [640,480],
+		"panel": 1,
+		"node": 1,
+		"K": [
+			[745.716,0,374.297],
+			[0,746.048,226.517],
+			[0,0,1]
+		],
+		"distCoef": [-0.318745,0.0454429,-0.000811973,0.000847189,0.0799718],
+		"R": [
+			[0.969466296,0.02846943647,-0.2435664017],
+			[-0.04833552526,0.9959371934,-0.07597883721],
+			[0.2404137638,0.08543183185,0.9669036272]
+		],
+		"t": [
+			[-51.22735213],
+			[142.8763812],
+			[289.9330519]
+		]
+	},
+	...</pre> </li>
+	<li> The camera names follow the naming rule described above. </li>
+	<li> <code>K,R,t</code> are the camera intrinsics, rotation matrix, and translation respectively. </li>
+	<li> If <code>X</code> is a 3x1 vector, then the camera transform is <code>x = K*(R*X + t)</code> (with projection and lens distortion). </li>
+	<li> <code>distCoef</code> represents lens distortion parameters, <code>[k1,k2,p1,p2,k3]</code>, as in the <a href="http://docs.opencv.org/2.4/doc/tutorials/calib3d/camera_calibration/camera_calibration.html">OpenCV calibration format</a>. </li>
+	<li> 1 unit length in the world coordinate represents 1 cm. 
+	</ul>
+	
+	<h2>Video Data</h2>
+	<ul>
+		<li> Due to the large data size, we can only release the compressed videos. We use ffmpeg's <a href="https://trac.ffmpeg.org/wiki/Encode/H.264">H.264 encoder</a> with CRF 10 for VGAs and CRF 20 for HDs.  </li>
+		<li> We use <a href="https://ffmpeg.org/">ffmpeg</a> to extract individual image files from the videos, using the scripts <code>vgaImgsExtractor.sh</code> and <code>hdImgsExtractor.sh</code> (these scripts are downloaded by <code>getData.sh</code>). See the <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox">GitHub</a> page for more details.
+		<li> If you don't use the provided extraction scripts, note that the first frame of the video should have index 0 to be compatible to our frame indexing rule. In ffmpeg, this can be done as
+			<pre>ffmpeg -i "videoName.mp4" -f image2 -start_number 0 "frame_%05d.png"</pre>
+		</li>
+		<li> Videos from the same type of sensors (i.e., all HD or all VGA) are already synchronized by hardware clocks, meaning that images with the same frame index are taken at the same moment. </li>
+		<li> However, the frame rates among different types of sensors are different. For example, VGAs capture at 25 Hz, and HDs at 29.97 Hz, and, thus, their frame numbers are independent. We provide additional synchronization tables with the precise time alignment between them. </li>
+		<li> Finally, the Kinect image streams are neither synchronized nor have a constant frame rate. The synchronization tables must be used with this data.</li>
+
+	</ul>
+	
+	<h2>Skeleton Reconstruction Results</h2>
+	
+	<ul>
+		<li> We reconstruct 3D motion of people using the method of [Joo et al. 2016] (under submission), which is an extension of <a href="http://www.cs.cmu.edu/~hanbyulj/panoptic-studio/">[Joo et al. 2015]</a>.  </li>
+		<li> The reconstruction results are generated by using the 480 VGA camera views. </li>
+		<li> The outputs are saved as JSON files. Each file contains 3D skeletons at a single time instance. A skeleton is composed of 15 joints.</li>
+		<li> An array "bodies" holds each skeleton, where each element is </li>
+			<pre>
+"bodies" : [
+	{
+		"id": 1,
+		"joints15": [82.8466, -144.961, 23.0948, 0.495789, 77.4016, -169.599, 18.2888, 0.477661, ...]
+	},
+	...	</pre>
+			<li> <code>id</code>: a unique subject index within a sequence. Skeletons with the same id across time represent temporally associated moving skeletons (an individual). </li>
+			<li> <code>joints15</code>: fifteen 3D joint locations, formatted as <code>[x1,y1,z1,c1,x2,y2,z2,c2,...]</code> where each <code>c</code> is a per-joint confidence score.</li>
+		<li> The order of joints is as follows (see <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox/blob/master/python/example.ipynb">this example</a> for an illustration):</li>
+        <div style="text-align:center"> <b>  Neck, HeadTop, BodyCenter, lShoulder,lElbow, lWrist, lHip, lKnee, lAnkle, rShoulder, rElbow, rWrist, rHip, rKnee, rAnkle </b> </div--!>
+			
+	</ul>
+	
+
+	
+    </div> <!-- /container -->
+  </body>
+</html>

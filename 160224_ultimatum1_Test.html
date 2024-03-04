@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> 160224_ultimatum1 - CMU Panoptic Dataset </title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/prism.css"/>
+	
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="css/main.css" rel="stylesheet">
+		<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+  
+  	<style type="text/css" media="screen">
+		table td.highlighted{background-color:#87CEFA;}
+	</style> 
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-72129944-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	
+	<script src="js/main.js"></script>
+	<script src="js/videopreview.js"></script>
+	<script src="js/downloadConf.js"></script>
+  
+  
+</head>
+<body>
+  
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="tools.html">Tools<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>		
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="breadcrumb">
+					<li>
+						<a href="dataset.html">Dataset</a> <span class="divider"></span>
+					</li>
+					<li>
+						<a href="ultimatum.html">Ultimatum</a> <span class="divider"></span>
+					</li>
+					<li class="active">
+						160224_ultimatum1
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" style="position: static">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-5">
+						<dl class="dl-horizontal" style="font-size:14px">
+							<dt>Duration(MM:SS):</dt>   			<dd>09:00</dd>
+							<dt>Annotations:</dt>			<dd>Skeletons, faces, transcripts</dd>
+							<dt>Audio:</dt>					<dd> Yes </dd>
+							<dt>VGA cameras:</dt>			<dd>480</dd>
+							<dt>HD cameras:</dt>			<dd>30</dd>
+							<dt>Kinect cameras:</dt>		<dd>10</dd>
+						</dl>
+					</div>
+					<div class="col-md-5" style="position: static">
+						<div class="video-preview" data-autostart=1 data-frames="1" data-source="webdata/posefs4a/160224_ultimatum1/preview/160224_ultimatum1_preview.jpg" ></div>
+					</div>
+					<div class="col-md-1">
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+			<table class="videoTable"  align="center" >
+				<tr>
+				<td>
+					<div class="videoALL">
+					<video  height="198" controls>
+
+					<source src="webdata/posefs4a/160224_ultimatum1/videos/160224_ultimatum1_exampleVideos.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
+					</div>
+				</td>
+				</tr>	
+			</table>
+			</div>
+			<div class="col-md-12">
+			<div id="stats-table">
+			<table class="table table-condensed" align="center">
+			<tbody><tr>
+				<td><div class="figureTitle">Selected views</div></td>				
+			</tr></tbody>
+			</table>
+			</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">3D Preview</div>
+				<table align="center">
+					<tr>
+						<td>
+							<div id="viz3d-container"></div>
+						</td>
+						<td>
+							<div id="viz3d-controls-container"></div>
+						</td>
+					</tr>
+				</table>
+				<script src="js/three.min.js"></script>
+				<script src="js/controls/TrackballControls.js"></script>
+				<script src="js/controls/OrbitControls.js"></script>
+				<script src="js/Detector.js"></script>
+				<script src="js/libs/stats.min.js"></script>
+				<script src="js/loaders/PLYLoader.js"></script>
+				<script src='js/libs/dat.gui.min.js'></script>
+				 <script src="js/randomColor.js"></script>
+
+				 <script>
+					var startFrameIdx = 150;
+					var endFrameIdx = 13999;				
+				</script>
+				 
+				<link type="text/css" rel="stylesheet" href="js/libs/dat-gui-light-theme.css">
+
+				<script type="x-shader/x-vertex" id="vertexshader">
+				varying vec3 vColor;
+				uniform float pointSize;
+				uniform float alpha;
+
+					void main() {
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+						gl_PointSize = pointSize;
+
+						gl_Position = projectionMatrix * mvPosition;
+						vColor = color;
+					}
+				</script>
+
+				<script type="x-shader/x-fragment" id="fragmentshader">
+					varying vec3 vColor;
+					uniform float alpha;
+					void main() {
+
+						gl_FragColor = vec4( vColor, alpha );
+
+					}
+				</script>
+
+				<script>
+					if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
+					var container, camera, scene, renderer, mesh;
+					var params_gui;
+
+					// Point clouds
+					var pointCloud;
+					var pointShaderMaterial;
+
+					// Skeletons
+					var connMat = [ [1,2], [1,4], [4,5], [5,6], [1,3], [3,7], [7,8], [8,9], [3,13],[13,14], [14,15], [1,10], [10, 11], [11, 12] ];
+					var colorMat = randomColor({hue: 'pink', count: 18});
+					var cross;	
+
+
+					mouse = { x: 0, y: 0 },
+					objects = [],
+					
+					count = 0,
+
+					CANVAS_WIDTH = 720,
+					CANVAS_HEIGHT = 520;
+					gui = new dat.GUI({height : 4 * 32 - 1, autoPlace: false });		
+
+					controls_container = document.getElementById( 'viz3d-controls-container' );
+					controls_container.appendChild(gui.domElement);
+					container = document.getElementById( 'viz3d-container' );
+					// document.body.appendChild( container );
+
+					renderer = new THREE.WebGLRenderer({antialias: true});
+					renderer.setSize( CANVAS_WIDTH, CANVAS_HEIGHT );
+					renderer.setClearColor( 0xFFFFFF );
+					//renderer.setPixelRatio( window.devicePixelRatio );
+					container.appendChild( renderer.domElement );
+
+					scene = new THREE.Scene();
+
+					camera = new THREE.PerspectiveCamera( 50, CANVAS_WIDTH / CANVAS_HEIGHT, 1, 2000 );				
+					
+					var bone_thickness = 3;
+					var sphereGeometry = new THREE.SphereGeometry( bone_thickness, 8, 8 );
+          var sphereMaterial = new THREE.MeshLambertMaterial({wireframe: false, color: 0xff8888  }); // colorMat[humanIdx]
+          var sphereMaterialArray = [ new THREE.MeshLambertMaterial({wireframe: false, color: 0xff8888  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0x336699  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0x666666  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0x003366  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xff6600  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0x00ff00  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xffcc00  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xff9900  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xFF0000  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xcccccc  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xa75c56  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xeab06e  }),
+            new THREE.MeshLambertMaterial({wireframe: false, color: 0xe89c84  })
+          ]
+
+					var boneMaterial = new THREE.MeshLambertMaterial({wireframe: false, color: 0xb8b8ff }); //colorMat[humanIdx]
+					var boneGeometry = new THREE.CylinderGeometry(0.0*bone_thickness, bone_thickness, 1.0, 8, 1);
+
+					function visSkeleton(scene,connMat,bodies,colorMat)
+					{
+						drawJoint(scene,bodies,colorMat);
+						drawBody(scene,bodies,connMat,colorMat);
+					}
+
+					function drawJoint(scene,bodies,colorMat)
+					{
+						var group = new THREE.Group();
+						group.name = 'joints';
+						for( humanIdx = 0; humanIdx < bodies.length; humanIdx++){
+              var joints = bodies[humanIdx]['joints15'];
+              var id = bodies[humanIdx]['id'];
+              var colorIdx = id%12;
+              for( jointIdx = 0; jointIdx < joints.length; jointIdx++)
+							{
+                var jointMesh = new THREE.Mesh(sphereGeometry, sphereMaterialArray[colorIdx]);
+								jointMesh.position.set( joints[jointIdx*4],joints[jointIdx*4+1],joints[jointIdx*4+2] );
+								jointMesh.name = 'joint';
+								group.add(jointMesh);
+							}
+						}
+						scene.add( group );
+					}
+
+
+					function drawBody(scene,bodies,connMat,colorMat)
+					{
+						var group = new THREE.Group();
+						group.name = 'bodies';
+
+						for( humanIdx = 0; humanIdx < bodies.length; humanIdx++){
+							var joints = bodies[humanIdx]['joints15'];
+							for( boneIdx = 0;  boneIdx < connMat.length; boneIdx++ )
+							{
+								var idxA = connMat[boneIdx][0]-1; 
+								var idxB = connMat[boneIdx][1]-1;
+								
+								var ptA = new THREE.Vector3( joints[ idxA*4 ], joints[ idxA*4+1 ], joints[ idxA*4+2 ] );
+								var ptB = new THREE.Vector3( joints[ idxB*4 ], joints[ idxB*4+1 ], joints[ idxB*4+2 ] );
+														
+								var boneMesh = drawBone(ptA,ptB,boneGeometry,boneMaterial);
+								boneMesh.name = 'bone';
+								group.add(boneMesh);
+							}
+						}
+						scene.add( group );
+					}
+
+					function drawBone(pointX, pointY, edgeGeometry, material) 
+					{
+						var direction = new THREE.Vector3().subVectors(pointY, pointX);
+						var orientation = new THREE.Matrix4();
+						orientation.lookAt(pointX, pointY, new THREE.Object3D().up);
+						orientation.multiply(new THREE.Matrix4().set(1, 0, 0, 0,
+							0, 0, 1, 0,
+							0, -1, 0, 0,
+							0, 0, 0, 1));
+						var edge = new THREE.Mesh(edgeGeometry, material);
+						var scale = new THREE.Matrix4().set(1,0,0,0,
+							0,direction.length(),0,0,
+							0,0,1,0,
+							0,0,0,1);
+						pos = orientation.multiply(scale);
+						var pos2 = new THREE.Matrix4().set(1,0,0,(pointX.x+pointY.x)/2,
+							0,1,0,(pointX.y+pointY.y)/2,
+							0,0,1,(pointX.z+pointY.z)/2,
+							0,0,0,1);
+						pos = pos2.multiply(pos);
+						edge.applyMatrix(pos);
+						return edge;
+					}
+
+					function removeEntity(name) {
+						var selectedObject = scene.getObjectByName(name);
+						scene.remove( selectedObject );
+					}
+					
+									
+					function zeroPad(num, places) {
+					  var zero = places - num.toString().length + 1;
+					  return Array(+(zero > 0 && zero)).join("0") + num;
+					}
+					
+					function onChangeFrame() {						
+							var manager = new THREE.LoadingManager();
+							var plyLoader;
+							var jsonLoader;
+							var pointcloud;
+							var skeleton_data;
+
+							if(params_gui.showPointcloud) {
+								plyLoader = new THREE.PLYLoader(manager);
+							}
+							if(params_gui.showSkeletons) {
+								jsonLoader = new THREE.XHRLoader(manager);
+							}
+
+							manager.onLoad = function() {
+								removeEntity('pointcloud');
+								scene.add( pointcloud );
+
+								removeEntity('bodies');
+								removeEntity('joints');
+								visSkeleton(scene,connMat,skeleton_data['bodies'],[]);
+								render();
+							};
+
+							if(params_gui.showPointcloud) {
+								//PLY file 
+                //var fileName = 'glExample/151125_mafia_complete/exportTrajStreamPly_webVersion_sampled/reconByTraj_' + zeroPad(params_gui.frameIdx+7801,8)+'.ply';
+                var fileName = "webdata/posefs4a/160224_ultimatum1/ptcloud/ptCloud_" + zeroPad(params_gui.frameIdx,8)+".ply";
+								plyLoader.load( fileName, function ( geometry ) {
+									pointcloud = new THREE.Points( geometry, pointShaderMaterial );
+									pointcloud.name = 'pointcloud';
+								 } );
+							} 
+							if (params_gui.showSkeletons) {
+                //var filename = 'glExample/skeleton/body3DScene_' + zeroPad(params_gui.frameIdx+7801,8)+'.json';
+                var fileName = "webdata/posefs4a/160224_ultimatum1/skeleton/body3DScene_" + zeroPad(params_gui.frameIdx,8)+".json";
+								jsonLoader.load(fileName, function (text) {
+									skeleton_data = JSON.parse( text );
+								});
+								
+							}
+					}		
+										
+					function onAutoPlay() {			
+						var manager = new THREE.LoadingManager();
+							var plyLoader;
+							var jsonLoader;
+							var pointcloud;
+							var skeleton_data;
+
+							if(params_gui.showSkeletons) {
+								jsonLoader = new THREE.XHRLoader(manager);
+							}
+
+							manager.onLoad = function() {
+								removeEntity('bodies');
+								removeEntity('joints');
+								visSkeleton(scene,connMat,skeleton_data['bodies'],[]);
+								render();
+							};
+
+						if (params_gui.autoplaySkel && params_gui.showSkeletons) {
+							params_gui.frameIdx = params_gui.frameIdx + 1;
+							if (params_gui.frameIdx > endFrameIdx)	//@TODO Max of frames index
+								params_gui.frameIdx = startFrameIdx;		//@TODO Min of frames index
+								
+                			var fileName = "webdata/posefs4a/160224_ultimatum1/skeleton/body3DScene_" + zeroPad(params_gui.frameIdx,8)+".json";
+							jsonLoader.load(fileName, function (text) {
+								skeleton_data = JSON.parse( text );
+							});
+							
+						}
+					}		
+					function init() {
+
+						camera = new THREE.PerspectiveCamera( 30, CANVAS_WIDTH /CANVAS_HEIGHT, 1, 2000 );
+						camera.up.set( 0, -1, 0 );
+
+						camera.position.x = -500;
+						camera.position.y = -500;
+						camera.position.z = -700;
+
+						controls = new THREE.TrackballControls(camera, container);
+
+						controls.rotateSpeed = 1.0;
+						controls.zoomSpeed = 1.2;
+						controls.panSpeed = 0.8;
+						controls.dynamicDampingFactor = 0.5;
+						//controls.keys = [ 65, 83, 68 ];
+						controls.addEventListener( 'change', render );
+
+						// world
+						scene = new THREE.Scene();
+						scene.position.set( 0, 120,0 );
+						 
+						// lights
+						light = new THREE.DirectionalLight( 0x888888 );
+						light.position.set( 0, -500, 0 );
+						scene.add( light );
+
+						light = new THREE.AmbientLight( 0x666666 );
+						scene.add( light );
+
+						// FLOOR
+						var texLoader = new THREE.TextureLoader();
+						var floorTexture;
+						texLoader.load('img/checkerboard.jpg', function(tex) {
+							floorTexture = tex;
+							floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
+							floorTexture.repeat.set( 5, 5 );
+							var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
+							// var floorGeometry = new THREE.PlaneGeometry(100, 100, 10, 10);
+							var floorGeometry = new THREE.CircleGeometry(300, 18);
+							var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+							floor.position.x = 0;
+							floor.position.y = 0;
+							floor.position.z = 0;
+							floor.rotation.x = Math.PI / 2;
+							scene.add(floor);		
+							render();
+						});
+
+						//GUI params
+						paautoplaySkelrams_gui = 
+						{
+							frameIdx: startFrameIdx,
+							pointSize: 0.1,
+							alpha: 0.75,
+							showPointcloud: false,
+							showSkeletons: true,
+							autoplaySkel: true
+						};	
+
+						pointShaderMaterial = new THREE.ShaderMaterial( {
+							uniforms: {
+								"pointSize": { type: "f", value: params_gui.pointSize },
+								"alpha":{ type: "f", value: params_gui.alpha},
+							},						
+							vertexColors: THREE.VertexColors,
+							vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+							fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+							transparent:    true,
+						});
+
+
+						//GUI												 
+						gui.add( params_gui, 'frameIdx').max(endFrameIdx).min(startFrameIdx).step(1).name( 'Frame' ).onChange(function(){ 
+							onChangeFrame();	
+						} );					
+											
+						gui.add( params_gui, 'pointSize', 0.01, 10, 0.01 ).name( 'PointSize' ).onChange(function(){
+							pointShaderMaterial.uniforms.pointSize.value  = params_gui.pointSize;
+							render();
+						} );
+						
+						gui.add( params_gui, 'alpha', 0.1, 1, 0.1 ).listen().name( 'Alpha' ).onChange(function(){
+							pointShaderMaterial.uniforms.alpha.value = params_gui.alpha;
+							render();
+						} );
+
+						gui.add(params_gui,'showPointcloud', true).listen().name("Load Point Cloud").onChange(function(newValue) {
+							onChangeFrame();
+						});
+						
+						gui.add(params_gui, 'showSkeletons', true).listen().name("Load Skeleton").onChange(function(newValue) {
+							onChangeFrame();
+						});
+
+						gui.add(params_gui, 'autoplaySkel', false).listen().name("Auto Play").onChange(function(newValue) {
+
+						});
+						
+						window.addEventListener( 'resize', onWindowResize, false );
+
+						// Load initial frame
+						onChangeFrame();
+					}
+
+					init();
+					animate();
+
+					function onWindowResize() {
+
+						camera.aspect = CANVAS_WIDTH / CANVAS_HEIGHT;
+						camera.updateProjectionMatrix();
+
+						renderer.setSize( CANVAS_WIDTH, CANVAS_HEIGHT );
+
+						controls.handleResize();
+
+						render();
+
+					}
+
+					function animate() {
+
+						requestAnimationFrame( animate );
+						controls.update();
+												
+						if(params_gui.autoplaySkel && params_gui.showSkeletons)
+						{
+							  onAutoPlayonAutoPlay();
+								
+							  // Iterate over all controllers
+							  for (var i in gui.__controllers) {
+								gui.__controllers[i].updateDisplay();
+							  }
+						}
+
+					}
+
+					function render() {
+						renderer.render( scene, camera );
+					}
+
+				</script>	
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">Download the sequence</div>
+				<div class="description"> We recommend that you first select the desired parts of the dataset and then generate the batch download script to download. </div>
+				<div id="stats-table">
+				<table class="table table-hover" align="center" id='downloadtable'>  
+					<tr><th>Download</th>  				<th>0~1min</th>	<th>1~2min</th>	<th>2~3min</th>	<th>3~4min</th>	<th>4~5min</th>	<th>5~6min</th>	<th>6~7min</th>	<th>7~8min</th>	<th>8~9min</th>           </tr>
+					<tr >				<th>HD</th>					 	<td>150.6 GB</td>  	<td>150.6 GB</td>  	<td>150.6 GB</td>  	<td>150.6 GB</td>  	<td>150.6 GB</td>  	<td>150.6 GB</td>  	<td>150.6 GB</td>  	<td>150.6 GB</td>  	<td>150.6 GB</td>               </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >			<th>VGA(1~100)</th>		 	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >			<th>VGA(101~200)</th>	 	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>VGA(201~300)</th>		 	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>VGA(301~400)</th>		 	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>VGA(401~480)</th>		 	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>Kinect</th>					 	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>  	<td>0 B</td>       </tr>
+					<tr><th>Total size:</th>		<th colspan="9" align="center">1.3 TB</th> </tr>
+					
+				</table>
+				</div>
+				
+				
+				
+				<div class="wrapper">				
+				<button class="btn btn-primary" id="generate_bat">Download Script(Windows)</button>
+				<button class="btn btn-primary" id="generate_sh">Download Script(Linux)</button>
+				</div>
+			</div>
+		
+		</div>	
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">License</div>	  
+				<div class="description">If you use any of the data, please cite our paper.</div>
+			</div>
+		</div>
+	</div>	
+
+
+</body>
+</html>

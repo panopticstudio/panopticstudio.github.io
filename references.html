@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>CMU Panoptic Dataset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>   
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+	<link href="css/myStyle.css" rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+		
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72129944-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+  <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="handdb.html">HandDB<span class="sr-only">(current)</span></a></li>
+			<li><a href="ptclouddb.html">PtCloudDB<span class="sr-only">(current)</span></a></li>
+      <li><a href="mtc.html">Monocular MoCap<span class="sr-only">(current)</span></a></li>
+      <li><a href="ssp.html">Social Signal Prediction<span class="sr-only">(current)</span></a></li>
+			<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="references.html">References<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    <div class="container">
+
+		
+<h2>Publications</h2>
+
+
+    <p>
+    Towards Social Artificial Intelligence: Nonverbal Social Signal Prediction in A Triadic Interaction<br>
+    Hanbyul Joo, Tomas Simon, Mina Cikara, Yaser Sheikh <br>
+    In CVPR 2019 <b> (Oral Presentation) </b> <br>
+    <a href="https://arxiv.org/pdf/1906.04158.pdf">[arxiv]</a> <br>
+    <p>
+
+
+    <p> Monocular Total Capture: Posing Face, Body and Hands in the Wild <br>
+    Donglai Xiang, Hanbyul Joo, Yaser Sheikh <br>
+     In CVPR 2019 <b>(Oral Presentation)</b> <br>
+     <a href="https://arxiv.org/abs/1812.01598">[arxiv]</a>
+                                <a href="http://domedb.perception.cs.cmu.edu/mtc.html">[Dataset]</a>
+                                        <a href="https://www.youtube.com/watch?v=rZn15BRf77E">[Video]</a>
+                                            </td>
+
+	<p>
+	Total Capture: A 3D Deformation Model for Tracking Faces, Hands, and Bodies <br>
+	Hanbyul Joo, Tomas Simon, and Yaser Sheikh <br>
+	In CVPR, 2018 <b>(Oral Presentation) <a href="http://cvpr2018.thecvf.com/program/main_conference#awards">[Best Student Paper Award]</a></b> <br>	
+	<a href="https://arxiv.org/pdf/1801.01615.pdf"> [arXiv(PDF)]</a>,<a href="http://www.cs.cmu.edu/~hanbyulj/totalcapture/"> [Project]</a><br>
+	<p>
+	<p>
+	Hand Keypoint Detection in Single Images using Multiview Bootstrapping<br>
+	Tomas Simon, Hanbyul Joo, Iain Matthews, and Yaser Sheikh <br>
+	In CVPR, 2017 <br>	
+	<a href="http://arxiv.org/abs/1704.07809"> [arXiv(PDF)]</a>,<a href="http://www.cs.cmu.edu/~tsimon/projects/mvbs.html"> [Project]</a><br>
+	<p>
+	<p>
+	Panoptic Studio: A Massively Multiview System for Interaction Motion Capture <br>
+	Hanbyul Joo, Tomas Simon, Xulong, Li, Hao Liu, Lei Tan, Lin Gui, Sean Banerjee, Timothy Godisart, Bart Nabbe, Iain Matthews, Takeo Kanade, Shohei Nobuhara, and Yaser Sheikh <br>
+	In TPAMI, 2017 <br>	
+	<a href="https://arxiv.org/pdf/1612.03153v1.pdf"> [arXiv(PDF)]</a><br>
+	<p>
+	Panoptic Studio: A Massively Multiview System for Social Motion Capture <br>
+	Hanbyul Joo, Hao Liu, Lei Tan, Lin Gui, Bart Nabbe, Iain Matthews, Takeo Kanade, Shohei Nobuhara, and Yaser Sheikh <br>
+	In ICCV, 2015 <b>(Oral Presentation) </b> <br>
+	<a href="http://www.cs.cmu.edu/~hanbyulj/panoptic-studio/ICCV2015_SMC.pdf"> [Paper(PDF)]</a>, <a href="http://www.cs.cmu.edu/~hanbyulj/panoptic-studio//ICCV2015_SMC_Supp.pdf"> [Supplementary Material]</a>, <a href="http://www.cs.cmu.edu/~hanbyulj/panoptic-studio//bib"> [BibTex]</a>  </p>
+
+	<p> MAP Visibility Estimation for Large-Scale Dynamic 3D Reconstruction<br>
+	Hanbyul Joo, Hyun Soo Park, and Yaser Sheikh <br>
+	In CVPR, 2014 <b>(Oral presentation) </b><br>
+<a href="http://www.cs.cmu.edu/~hanbyulj/14/visibility/CVPR_2014_Visibility.pdf"> [Paper]</a>, <a href="http://www.cs.cmu.edu/~hanbyulj/14/visibility/visibility_bib"> [BibTeX] </a>, <a href="http://www.cs.cmu.edu/~hanbyulj/14/visibility/CVPR14_slide.pdf"> [Slide (pdf)] </a>, <a href="http://www.cs.cmu.edu/~hanbyulj/14/visibility/CVPR14_poster.pdf">Poster (pdf)</a>, <a href="http://www.cs.cmu.edu/~hanbyulj/14/visibility/http://techtalks.tv/talks/map-visibility-estimation-for-large-scale-dynamic-3d-reconstruction/60293/"> [CVPR Talk]</a></p>
+
+	<h2>Videos</h2>
+	<iframe width="640" height="360" src="https://www.youtube.com/embed/m0-7HnWvxG4?rel=0" frameborder="0" allowfullscreen></iframe>
+	<p align="center"> Full Length Video </p>
+	<!--iframe width="640" height="360" src="https://www.youtube.com/embed/8ROQOK1Nvfw?rel=0;3&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	<br>
+	<p> Captured Videos From 480 VGA Cameras and 16 HD Cameras </p> <br>
+	<iframe width="640" height="360" src="http://www.youtube.com/embed/D-CdCI27nlY?rel=0;3&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> <br>
+	<p> Trajectory Stream Reconstruction (Joo et al., CVPR 2014)</p> <br>
+	<br-->
+
+	<!--iframe width="640" height="360<F5>" src="https://www.youtube.com/embed/cpxNpWQSMKM?rel=0;3&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	<p> Social Motion Capture (Joo et al., ICCV 2015)</p> <br>
+	<br-->
+
+	<h2>Press Coverage</h2>
+<table>
+<tr>
+<td width="210" height="50" align="center">
+<a href="http://spectrum.ieee.org/tech-talk/computing/software/camerafilled-dome-recreates-full-3d-motion-scenes"><img src="logos/IEEESpectrum.jpeg" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.cnet.com/videos/tomorrow-daily-021-new-video-capture-tech-the-rickroll-rickmote-episode-vii-new-x-wing/"><img src="http://upload.wikimedia.org/wikipedia/en/8/8f/Cnetlogo.png" width="50"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.nbcnews.com/tech/innovation/camera-studded-dome-tracks-your-every-move-precision-n161541"><img src="logos/nbc-news.png" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://news.discovery.com/tech/gear-and-gadgets/dome-of-500-cameras-creates-amazing-3-d-flicks-140724.htm"><img src="logos/discovery.jpg" width="190"></a>
+</td>
+</tr>
+
+<tr>
+<td width="210" height="50" align="center">
+<a href="http://www.engadget.com/2014/07/21/carnegie-motion-capture-dome/"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Engadget-logo.svg/200px-Engadget-logo.svg.png" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://gizmodo.com/a-dome-packed-with-480-cameras-captures-detailed-3d-ima-1608263411"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--NkOZEtU4--/xxtpkkwu6xvbcaoxjbx2.png" width="150">
+</a></td>
+<td width="210" height="50" align="center">
+<a href="http://www.theverge.com/2014/7/21/5923767/panoptic-studio-3d-motion-capture-carnegie-melon"><img src="logos/Verge.png" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.sciencedaily.com/releases/2014/07/140717124950.htm"><img src="http://www.sciencedaily.com/images/scidaily-logo.png" width="150"></a>
+</td>
+</tr>
+
+<tr>
+<td width="210" height="50" align="center">
+<a href="http://phys.org/news/2014-07-combinehundreds-videos-reconstruct-3d-motion.html"><img src="logos/phyOrg.jpg" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.slate.com/articles/video/video/2014/07/panoptic_studio_carnegie_mellon_s_3_d_camera_dome_can_capture_action.html"><img src="http://upload.wikimedia.org/wikipedia/commons/1/13/Slate_logo.png" width="90"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://petapixel.com/2014/07/21/researchers-use-480-camera-setup-accurately-capture-3d-motion/"><img src="logos/petapixel.jpg" width="100"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.gizmag.com/3d-motion-reconstruction-camera-panoptic-dome/33033/"><img src="logos/gizmag.jpeg" width="100"></a>
+</td>
+</tr>
+
+<tr>
+<td width="210" height="50" align="center">
+<a href="http://www.theregister.co.uk/2014/07/22/boffins_fill_a_dome_with_480_cameras_for_3d_motion_capture/"><img src="http://upload.wikimedia.org/wikipedia/en/5/5a/The_Register_r.png" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.theengineer.co.uk/electronics/news/3d-motion-captured-without-markers/1018947.article"><img src="logos/theEngineer.png" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.popphoto.com/news/2014/07/carnegie-mellon-packs-480-cameras-dome-to-perfectly-track-3d-motion"><img src="logos/PopPhoto.jpg" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.eurekalert.org/pub_releases/2014-07/cmu-cmc071714.php"><img src="logos/EurekAlert.jpg" width="120"></a>
+</td>
+</tr>
+
+<tr>
+<td width="210" height="50" align="center">
+<a href="http://www.azorobotics.com/news.aspx?newsID=5985"><img src="logos/AzoRobot.jpg" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.slrlounge.com/latest-3d-tech-geodome-captures-every-move-480-cameras"><img src="logos/slrLounge.jpg" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://security-today.com/articles/2014/07/23/panopticon-captures-every-movement-in-3d.aspx"><img src="logos/securityToday.jpg" width="150"></a>
+</td>
+<td width="210" height="50" align="center">
+<a href="http://www.cmu.edu/news/stories/archives/2014/july/july17_reconstructing3Dmotion.html"><img src="logos/CMU.jpg" width="130"></a> 
+</td>
+</tr>
+</table>
+
+	
+	
+
+
+    </div> <!-- /container -->
+  </body>
+</html>

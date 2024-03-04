@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>CMU Panoptic Dataset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+	<link href="css/myStyle.css" rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72129944-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<style>
+	h2
+	{
+		align: left;
+	}
+     p.note
+     {
+        font-family: Arial Black;
+        font-size: 14px;
+     }
+    ul.note
+    {
+      list-style-type: none;
+      padding-left: 0px;
+    }
+
+	
+    td.new {
+      height: 30px;
+    }
+	
+    li.note {
+
+      font-family: Verdana;
+      position: relative;
+      padding-left: 7px;
+      font-size: 13px;
+    }
+
+    li.note:before {
+        content: "\e080";
+        font-family: 'Glyphicons Halflings';
+        font-size: 9px;
+        position: relative;
+        margin-right: 3px;
+        top: 3px;
+        color: #ccc;
+      }
+</style>
+</head>
+
+  <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='font-size: 25px; color:#d17702; font-weight: regular'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		  <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="dataset.html">Browse<span class="sr-only">(current)</span></a></li>
+			<li><a href="handdb.html">HandDB<span class="sr-only">(current)</span></a></li>
+			<li><a href="ptclouddb.html">PtCloudDB<span class="sr-only">(current)</span></a></li>
+			<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+			<li><a href="references.html">References<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    <div class="container">
+
+      <table width=80% >
+        <tr>
+          <td width=72%>
+		    <iframe width="640" height="360" src="https://www.youtube.com/embed/wb32z_xwk0c?rel=0" frameborder="0" allowfullscreen></iframe>            
+			<p> * See the full length version of this video <a href="https://www.youtube.com/watch?v=m0-7HnWvxG4"  target="_blank">here</a> </p>
+          </td >
+          <td width=30%>
+            <p class="note"> Massively Multiview System  </p>
+            <ul class="note">
+
+             <li class="note"> 480 VGA camera views </li>
+             <li class="note"> 30+ HD views </li>
+             <li class="note"> 10 RGB-D sensors </li>
+             <li class="note"> Hardware-based sync</li>
+             <li class="note"> Calibration</li>
+           </ul>
+           <p class="note"> Interesting Scenes with Labels </p>
+           <ul class="note">
+             <li class="note"> Multiple people </li>
+             <li class="note"> Socially interacting groups </li>
+             <li class="note"> 3D body pose  </li>
+             <li class="note"> 3D facial landmarks </li>
+             <li class="note"> Transcripts + speaker ID </li>
+           </ul>
+          </td>
+        </tr>
+      </table>
+
+
+<!--h2>About the Panoptic Studio</h2>
+<p> The Panoptic Studio is a system composed of more than 500 diverse sensors. The system is specifically designed to study dynamic scenes, especially for the analysis of multi-person social interaction. The system has a sufficient working space to have more than 10 people inside, and still densely senses the space thanks to the large number of unique views. Our team have devoted efforts to build and stabilize this system for more than 5 years, and we believe that it should be valuable to share the data captured from our system to the community. We hope our system and dataset can be used as a useful tool in various research fields.
+</p -->
+
+<h2>Dataset Size</h2>
+ Currently, 65 sequences (5.5 hours) and 1.5 millions of 3D skeletons are available.
+	
+<h2>What's New</h2>
+  <table width=80% >
+
+
+    <tr>
+       <td class="new"> <b> Jul. 2018 </b> </td> <td> 3D Face and Hand keypoint data are available for sequences. Check the Range-of-motion sequence. Check the toolbox to download. </td>  
+  </tr>
+  
+  <tr>
+      <td class="new"> <b> May. 2018 </b> </td> <td>
+
+	  
+	  <!--iframe width="360" height="202.5" src="https://www.youtube.com/embed/g-oi_kCyoDY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe-->  
+	  <iframe width="360" height="202.5" src="https://www.youtube.com/embed/R3jBEXqN2Gk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	
+	
+	  <br><b>PointCloud DB from 10 Kinects </b> (with corresponding <b>41 RGB videos</b>) is available (6+ hours of data): <a href="http://domedb.perception.cs.cmu.edu/ptclouddb.html"> PtCloudDB</a>.
+	  
+	  
+	  </td>  	  
+  </tr
+
+  <tr>
+       <td class="new"> <b> Mar. 2018 </b> </td> <td> Total body motion capture paper will be presented in CVPR 2018: <a href="http://www.cs.cmu.edu/~hanbyulj/totalcapture/"> Project page</a>.</td>  
+  </tr>
+  
+  <tr>
+       <td class="new"> <b> Dec. 2017 </b> </td> <td> <a href="http://domedb.perception.cs.cmu.edu/handdb.html">Hand Keypoint Dataset Page</a> has been added. More data will be coming soon.</td>  
+  </tr>
+
+	<tr>
+	     <td class="new"> <b> Jun. 2017 </b> </td> <td> We organize a tutorial in conjunction with CVPR 2017: <a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">"DIY A Multiview Camera System: Panoptic Studio Teardown"</a></td>  
+	</tr>
+	<tr>
+	     <td class="new"> <b> Jun. 2017 </b> </td> <td> Hand keypoint detection and reconstruction paper will be presented in CVPR 2017: <a href="http://www.cs.cmu.edu/~tsimon/projects/mvbs.html">Project page</a>. </td>  
+	</tr>
+	<tr>
+	     <td class="new"> <b> Dec. 2016 </b> </td> <td> Panoptic Studio is featured on <a href="http://www.theverge.com/2016/12/7/13857144/social-vr-carnegie-mellon-panoptic-studio-facebook-oculus-toybox">The Verge</a>. You can also see the video version <a href="https://www.youtube.com/watch?v=Ryawcs6OZmI">here</a>. </td>  
+	 </tr>
+	 
+	<tr>
+	     <td class="new"> <b> Dec. 2016 </b> </td> <td>  The social interaction capture paper (extended version of ICCV15) is available on <a href="https://arxiv.org/pdf/1612.03153v1.pdf">arXiv</a>.</td> 
+	 </tr>
+	
+     <tr>
+	     <td class="new"> <b> Sep. 2016 </b> </td> <td>  The CMU PanopticStudio Dataset is now publicly released. <br> Currently, <b>480 VGA videos</b>, <b>31 HD videos</b>, <b>3D body pose</b>, and <b>calibration data</b> are available. <br> <b>Dense point cloud</b> (from 10 Kinects) and <b>3D face reconstruction</b> will be available soon.<br> Please contact <a href="http://www.cs.cmu.edu/~hanbyulj">Hanbyul Joo</a> and <a href="http://www.cs.cmu.edu/~tsimon">Tomas Simon</a> for any issue of our dataset. </td>
+	</tr>
+
+	<tr>
+	<td class="new"> <b> Sep. 2016 </b> </td> <td>  The <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox">PanopticStudio Toolbox</a> is available on GitHub. </td>
+	</tr>
+
+	<tr>
+	<td class="new"> <b> Aug. 2016 </b> </td> <td>  Our dataset website is open. Dataset and tools will be available soon. </td>
+	</tr>
+</table>
+
+<h2>Dataset Examples</h2>
+<img src="img/ExampleResults.jpg" width="1100" alt="Example Results">
+
+
+<h2>System Description</h2>
+<p>
+We keep upgrading our system. Currently our system has the following hardware setup:  <br>
+
+<ul>
+  <li>480 VGA cameras, 640 x 480 resolution, 25 fps,  synchronized among themselves using a hardware clock  </li>
+  <li>31 HD cameras, 1920 x 1080 resolution, 30 fps,  synchronized among themselves using a hardware clock, timing aligned with VGA cameras </li>
+  <li>10 Kinect &#8545; Sensors. 1920 x 1080 (RGB), 512 x 424 (depth), 30 fps, timing aligned among themselves and other sensors</li>
+  <li>5 DLP Projectors. synchronized with HD cameras</li>
+</ul>
+
+The following figure shows the dimension of our system. <br>
+
+<img src="img/DomeDesignFigure.jpg" width="452" height="300" alt="Dome Figures">
+
+<h2>References</h2>
+By using the dataset, you agree to cite at least one of the following papers. 
+
+<pre>
+@article{Joo_2017_TPAMI,
+  title={Panoptic Studio: A Massively Multiview System for Social Interaction Capture},
+  author={Joo, Hanbyul and Simon, Tomas and Li, Xulong and Liu, Hao and Tan, Lei and Gui, Lin and Banerjee, Sean and Godisart, Timothy Scott and Nabbe, Bart and Matthews, Iain and Kanade, Takeo and Nobuhara, Shohei and Sheikh, Yaser},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2017}
+}
+
+@article{Simon_2017_CVPR,
+title={Hand Keypoint Detection in Single Images using Multiview Bootstrapping},
+author={Simon, Tomas and Joo, Hanbyul and Sheikh, Yaser},
+journal={CVPR},
+year={2017} }
+
+@InProceedings{Joo_2015_ICCV,
+title = {Panoptic Studio: A Massively Multiview System for Social Motion Capture},
+author = {Joo, Hanbyul and Liu, Hao and Tan, Lei and Gui, Lin and Nabbe, Bart and Matthews, Iain and Kanade, Takeo and Nobuhara, Shohei and Sheikh, Yaser},
+booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+year = {2015}
+}</pre>
+
+<h2>License</h2>
+Panoptic Studio Dataset is freely available for free non-commercial use.
+
+
+<h2>Acknowledgement</h2>
+This research is supported by the National Science Foundation under Grants No. 1353120 and 1029679, and in part using an ONR grant 11628301.
+	<p>
+	
+	
+	<p>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

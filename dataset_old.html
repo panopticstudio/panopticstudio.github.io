@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>CMU Panoptic Dataset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>   
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+		
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72129944-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+</head>
+<body>
+  
+
+	<!-- dataset.html -->
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="handdb.html">HandDB<span class="sr-only">(current)</span></a></li>
+			<li><a href="ptclouddb.html">PtCloudDB<span class="sr-only">(current)</span></a></li>
+			<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+			<li><a href="references.html">References<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+					<ul class="breadcrumb">
+						<li class="active">
+							<a href="dataset.html">Dataset</a> <span class="divider"></span>
+						</li>
+					</ul>
+			</div>
+		
+		
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Ultimatum</h3>
+					<a href="ultimatum.html">
+					<img src="media/categoryFigures/ultimatum.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">5</span>
+					</a>
+					<div class="caption">
+
+						<p>A bargaining game that two groups negotiate to split a certain amount of money</p>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Mafia</h3>
+					<a href="mafia.html">
+					<img src="media/categoryFigures/mafia.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">7</span>
+					</a>
+					<div class="caption">
+
+						<p>A role playing game that involves both conflict and cooperation by secretly assigned Mafias and Citizens</p>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Haggling</h3>
+					<a href="haggling.html">
+					<img src="media/categoryFigures/haggling.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">3</span>
+					</a>
+					<div class="caption">
+
+						<p>A game that two sellers promote their own competitive products and a buyer selects one between them</p>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Dance</h3>
+					<a href="dance.html">
+					<img src="media/categoryFigures/dance.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">8</span>
+					</a>
+					<div class="caption">
+
+						<p>Dance performances by professional dancers</p>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Musical Instruments</h3>
+					<a href="musical_instruments.html">
+					<img src="media/categoryFigures/musical_instruments.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">15</span>
+					</a>
+					<div class="caption">
+
+						<p>Musical performances by drummers and cellists</p>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Pose</h3>
+					<a href="pose.html">
+					<img src="media/categoryFigures/pose.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">33</span>
+					</a>
+					<div class="caption">
+
+						<p>Range of motion of diverse subjects</p>
+						
+					</div>
+				</div>
+			</div>
+				
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Toddler</h3>
+					<a href="toddler.html">
+					<img src="media/categoryFigures/toddler.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">12</span>
+					</a>
+					<div class="caption">
+
+						<p>Various scenes captured with toddlers</p>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<h3>Special Events</h3>
+					<a href="special_events.html">
+					<img src="media/categoryFigures/special_events.jpg" alt="media/categoryFigures/error.jpg">
+					<span class="badge badge-notify">4</span>
+					</a>
+					<div class="caption">
+
+						<p>Other interesting sequences</p>
+						
+					</div>
+				</div>
+			</div>
+		
+	</div>
+	</div>
+
+
+</body>
+</html>

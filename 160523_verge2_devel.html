@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> 160523_verge2 - CMU Panoptic Dataset </title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/prism.css"/>
+	
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="css/main.css" rel="stylesheet">
+		<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+  
+  	<style type="text/css" media="screen">
+		table td.highlighted{background-color:#87CEFA;}
+	</style> 
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-72129944-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+  
+  
+</head>
+<body>
+  
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="tools.html">Tools<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>		
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="breadcrumb">
+					<li>
+						<a href="dataset.html">Dataset</a> <span class="divider"></span>
+					</li>
+					<li>
+						<a href=".html"></a> <span class="divider"></span>
+					</li>
+					<li class="active">
+						160523_verge2
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" style="position: static">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-5">
+						<dl class="dl-horizontal" style="font-size:14px">
+						</dl>
+					</div>
+					<div class="col-md-5" style="position: static">
+					</div>
+					<div class="col-md-1">
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+			<table class="videoTable"  align="center" >
+				<tr>
+				<td>
+					<div class="videoALL">
+					<video  height="270" controls>
+
+				<!--	<source src="webdata/posefs6a/160523_verge2/videos/160523_verge2_exampleVideos.mp4" type="video/mp4">
+				 -->	<source src="webdata/posefs6a/160523_verge2/videos/hd/ve31-2.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
+					</div>
+				</td>
+				</tr>	
+			</table>
+			</div>
+			<div class="col-md-12">
+			<div id="stats-table">
+			<table class="table table-condensed" align="center">
+			<tbody><tr>
+				<td><div class="figureTitle">Selected views</div></td>				
+			</tr></tbody>
+			</table>
+			</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">3D Preview</div>
+				<table align="center">
+					<tr>
+						<td>
+							<div id="viz3d-container"></div>
+						</td>
+						<td>
+							<div id="viz3d-controls-container"></div>
+						</td>
+					</tr>
+				</table>
+				<script src="http://threejs.org/build/three.min.js"></script>
+				<script src="js/controls/TrackballControls.js"></script>
+				<script src="js/controls/OrbitControls.js"></script>
+				<script src="js/Detector.js"></script>
+				<script src="js/libs/stats.min.js"></script>
+				<script src="js/loaders/PLYLoader.js"></script>
+				<script src='js/libs/dat.gui.min.js'></script>
+				 <script src="js/randomColor.js"></script>
+
+				 <script>
+					var startFrameIdx = 100;
+					var endFrameIdx = 1800;
+				</script>
+				 
+				<link type="text/css" rel="stylesheet" href="js/libs/dat-gui-light-theme.css">
+
+				<script type="x-shader/x-vertex" id="vertexshader">
+				varying vec3 vColor;
+				uniform float pointSize;
+				uniform float alpha;
+
+					void main() {
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+						gl_PointSize = pointSize;
+
+						gl_Position = projectionMatrix * mvPosition;
+						vColor = color;
+					}
+				</script>
+
+				<script type="x-shader/x-fragment" id="fragmentshader">
+					varying vec3 vColor;
+					uniform float alpha;
+					void main() {
+
+						gl_FragColor = vec4( vColor, alpha );
+
+					}
+				</script>
+
+				<script>
+					if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+					var calibration;
+					var container, camera, scene, renderer, mesh, bkgScene, bkgCamera;
+					var params_gui;
+
+					// Point clouds
+					var pointCloud;
+					var pointShaderMaterial;
+
+					// Skeletons
+					var connMat = [ [1,2], [1,4], [4,5], [5,6], [1,3], [3,7], [7,8], [8,9], [3,13],[13,14], [14,15], [1,10], [10, 11], [11, 12] ];
+					var colorMat = randomColor({hue: 'pink', count: 18});
+					var cross;	
+					var NEAR = 0.1;
+					var FAR = 6000;
+
+					var video = $('video')[0];
+					var videoTexture;
+
+					mouse = { x: 0, y: 0 },
+					objects = [],
+					
+					count = 0,
+
+					CANVAS_WIDTH = 960/2,
+					CANVAS_HEIGHT = 540/2;
+
+					gui = new dat.GUI({height : 4 * 32 - 1, autoPlace: false });		
+
+					controls_container = document.getElementById( 'viz3d-controls-container' );
+					controls_container.appendChild(gui.domElement);
+					container = document.getElementById( 'viz3d-container' );
+					// document.body.appendChild( container );
+
+					renderer = new THREE.WebGLRenderer({antialias: true});
+					renderer.setSize( CANVAS_WIDTH, CANVAS_HEIGHT );
+					renderer.setClearColor( 0xFFFFFF );
+					// renderer.depth = false;
+					renderer.setViewport(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+					//renderer.setPixelRatio( window.devicePixelRatio );
+					container.appendChild( renderer.domElement );
+
+					scene = new THREE.Scene();
+					bkgScene = new THREE.Scene();
+					bkgCamera = new THREE.Camera();					
+
+					camera = new THREE.PerspectiveCamera( 50, CANVAS_WIDTH / CANVAS_HEIGHT, NEAR, FAR );				
+					var bone_thickness = 3;
+					var sphereGeometry = new THREE.SphereGeometry( bone_thickness, 8, 8 );
+					var sphereMaterial = new THREE.MeshLambertMaterial({wireframe: false, color: 0xff8888, DoubleSide: true  }); // colorMat[humanIdx]
+					var sphereMaterialArray = [ new THREE.MeshLambertMaterial({wireframe: false, color: 0xff8888  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0x336699  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0x666666  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0x003366  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xff6600  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0x00ff00  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xffcc00  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xff9900  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xFF0000  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xcccccc  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xa75c56  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xeab06e  }),
+						new THREE.MeshLambertMaterial({wireframe: false, color: 0xe89c84  })
+					]
+
+					var boneMaterial = new THREE.MeshLambertMaterial({wireframe: false, color: 0xb8b8ff }); //colorMat[humanIdx]
+					var boneGeometry = new THREE.CylinderGeometry(0.0*bone_thickness, bone_thickness, 1.0, 8, 1);
+
+					function visSkeleton(scene,connMat,bodies,colorMat)
+					{
+						drawJoint(scene,bodies,colorMat);
+						drawBody(scene,bodies,connMat,colorMat);
+					}
+
+					function drawJoint(scene,bodies,colorMat)
+					{
+
+						var group = new THREE.Group();
+						group.name = 'joints';
+						// group.frustumCulled = false;
+						for( humanIdx = 0; humanIdx < bodies.length; humanIdx++){
+							var joints = bodies[humanIdx]['joints15'];
+							var id = bodies[humanIdx]['id'];
+							var colorIdx = id%12;
+							var M = camera.matrix;
+							var M2 = camera.projectionMatrix;
+							for( jointIdx = 0; jointIdx < joints.length; jointIdx++)
+							{
+								if (joints[jointIdx*4+3]>0) {
+									var jointMesh = new THREE.Mesh(sphereGeometry, sphereMaterialArray[colorIdx]);
+									// jointMesh.frustumCulled = false;
+									jointMesh.position.set( joints[jointIdx*4],joints[jointIdx*4+1],joints[jointIdx*4+2] );
+									jointMesh.name = 'joint';
+									group.add(jointMesh);									
+								}
+							}
+						}
+						scene.add( group );
+					}
+
+
+					function drawBody(scene,bodies,connMat,colorMat)
+					{
+						var group = new THREE.Group();
+						group.name = 'bodies';
+
+						for( humanIdx = 0; humanIdx < bodies.length; humanIdx++){
+							var joints = bodies[humanIdx]['joints15'];
+							for( boneIdx = 0;  boneIdx < connMat.length; boneIdx++ )
+							{
+								var idxA = connMat[boneIdx][0]-1; 
+								var idxB = connMat[boneIdx][1]-1;
+
+								if (joints[idxA*4+3]>0 && joints[idxB*4+3]>0) {
+									
+									var ptA = new THREE.Vector3( joints[ idxA*4 ], joints[ idxA*4+1 ], joints[ idxA*4+2 ] );
+									var ptB = new THREE.Vector3( joints[ idxB*4 ], joints[ idxB*4+1 ], joints[ idxB*4+2 ] );
+												
+									var boneMesh = drawBone(ptA,ptB,boneGeometry,boneMaterial);
+									boneMesh.name = 'bone';
+									group.add(boneMesh);
+								}
+							}
+						}
+						scene.add( group );
+					}
+
+					function drawBone(pointX, pointY, edgeGeometry, material) 
+					{
+						var direction = new THREE.Vector3().subVectors(pointY, pointX);
+						var orientation = new THREE.Matrix4();
+						orientation.lookAt(pointX, pointY, new THREE.Object3D().up);
+						orientation.multiply(new THREE.Matrix4().set(1, 0, 0, 0,
+							0, 0, 1, 0,
+							0, -1, 0, 0,
+							0, 0, 0, 1));
+						var edge = new THREE.Mesh(edgeGeometry, material);
+						var scale = new THREE.Matrix4().set(1,0,0,0,
+							0,direction.length(),0,0,
+							0,0,1,0,
+							0,0,0,1);
+						pos = orientation.multiply(scale);
+						var pos2 = new THREE.Matrix4().set(1,0,0,(pointX.x+pointY.x)/2,
+							0,1,0,(pointX.y+pointY.y)/2,
+							0,0,1,(pointX.z+pointY.z)/2,
+							0,0,0,1);
+						pos = pos2.multiply(pos);
+						edge.applyMatrix(pos);
+						return edge;
+					}
+
+					function removeEntity(name) {
+						var selectedObject = scene.getObjectByName(name);
+						scene.remove( selectedObject );
+					}
+					
+									
+					function zeroPad(num, places) {
+					  var zero = places - num.toString().length + 1;
+					  return Array(+(zero > 0 && zero)).join("0") + num;
+					}
+					
+					function onChangeFrame() {						
+							var manager = new THREE.LoadingManager();
+							var plyLoader;
+							var jsonLoader;
+							var pointcloud;
+							var skeleton_data;
+							
+							videoTexture.needsUpdate = true;
+							// video.currentTime = (params_gui.frameIdx+1)/25.0;
+							if(params_gui.showPointcloud) {
+								plyLoader = new THREE.PLYLoader(manager);
+							}
+							if(params_gui.showSkeletons) {
+								jsonLoader = new THREE.XHRLoader(manager);
+							}
+
+							manager.onLoad = function() {
+								
+								// removeEntity('pointcloud');
+								// scene.add( pointcloud );
+
+								removeEntity('bodies');
+								removeEntity('joints');
+								visSkeleton(scene,connMat,skeleton_data['bodies'],[]);
+								render();
+							};
+
+							if(params_gui.showPointcloud) {
+				                var fileName = "webdata/posefs6a/160523_verge2/ptcloud/ptCloud_" + zeroPad(params_gui.frameIdx,8)+".ply";
+								plyLoader.load( fileName, function ( geometry ) {
+									pointcloud = new THREE.Points( geometry, pointShaderMaterial );
+									pointcloud.name = 'pointcloud';
+								 } );
+							} 
+							if (params_gui.showSkeletons) {
+			                	//var filename = 'glExample/skeleton/body3DScene_' + zeroPad(params_gui.frameIdx+7801,8)+'.json';
+			                	var fileName = "webdata/posefs6a/160523_verge2/skeleton/body3DScene_" + zeroPad(params_gui.frameIdx,8)+".json";
+								jsonLoader.load(fileName, function (text) {
+									skeleton_data = JSON.parse( text );
+								});
+								
+							}
+					}		
+										
+					function onAutoPlay() {			
+						var manager = new THREE.LoadingManager();
+							var plyLoader;
+							var jsonLoader;
+							var pointcloud;
+							var skeleton_data;
+
+							if(params_gui.showSkeletons) {
+								jsonLoader = new THREE.XHRLoader(manager);
+							}
+
+							manager.onLoad = function() {
+								removeEntity('bodies');
+								removeEntity('joints');
+								visSkeleton(scene,connMat,skeleton_data['bodies'],[]);
+								render();
+							};
+
+							if (params_gui.autoplaySkel && params_gui.showSkeletons) {
+								params_gui.frameIdx = params_gui.frameIdx + 1;
+								if (params_gui.frameIdx > endFrameIdx)	//@TODO Max of frames index
+									params_gui.frameIdx = startFrameIdx;		//@TODO Min of frames index
+								
+                			var fileName = "webdata/posefs6a/160523_verge2/skeleton/body3DScene_" + zeroPad(params_gui.frameIdx,8)+".json";
+							jsonLoader.load(fileName, function (text) {
+								skeleton_data = JSON.parse( text );
+							});
+							
+						}
+					}	
+					function getCam(panel, node) {
+						var key = ''+panel+'_'+node;
+						return calibration.index[key];	
+					}
+					function init() {
+
+
+						//GUI params
+						params_gui = 
+						{
+							frameIdx: startFrameIdx,
+							pointSize: 0.1,
+							alpha: 0.75,
+							showPointcloud: false,
+							showSkeletons: true,
+							autoplaySkel: false
+						};	
+
+						
+						videoTexture = new THREE.Texture( video );
+						videoTexture.minFilter = THREE.NearestFilter;
+                    	videoTexture.magFilter = THREE.NearestFilter;
+                    	videoTexture.generateMipmaps = false;
+                    	videoTexture.flipY = true;
+
+						camera = new THREE.PerspectiveCamera( 80, CANVAS_WIDTH /CANVAS_HEIGHT, 0.1, 5000 );
+						//camera.up.set( 0, -1, 0 );
+						// camera.matrixAutoUpdate = false;
+						// camera.position.x = 0;
+						// camera.position.y = 0;
+						// camera.position.z = 1000;
+						//camera.lookAt(new THREE.Vector3(0,0,0));
+						var calibFile = "webdata/posefs1a/Calibration/160523_calib_tent13_norm.json";
+						// controls = new THREE.TrackballControls(camera, container);
+						jsonLoader = new THREE.XHRLoader();
+                        jsonLoader.load(calibFile, function (text) {
+                                                        var calib_data = JSON.parse( text );
+							calibration = calib_data.calibration;
+							calibration.index = {};
+							for (var ci in calibration.cameras) {
+								var c = calibration.cameras[ci];
+								var key = ''+c.panel+'_'+c.node;
+								calibration.index[key] = c;
+							}	
+							var cam = getCam(0, 1); // ve31-2 ?
+							var M = new THREE.Matrix4();
+							M.fromArray(cam.M[0].concat(cam.M[1],cam.M[2],cam.M[3]));
+							M.transpose();
+							M.getInverse(M.clone());
+							M.decompose( camera.position, camera.quaternion, camera.scale );
+							var R = new THREE.Matrix4().extractRotation(M);
+							camera.updateMatrixWorld();
+							var K = new THREE.Matrix3();
+							K.fromArray(cam.K[0].concat(cam.K[1],cam.K[2]));
+							K.transpose();
+							// Matrix to undo the (camera's) viewport transform
+							var w = 1920;
+							var h = 1080;
+							var f = FAR;
+							var n = NEAR;
+							var VP = new THREE.Matrix4();
+							var te = VP.elements;
+							te[ 0 ] = w/2;	te[ 4 ] = 0;	te[ 8 ] = 0;	te[ 12 ] = w/2;
+							te[ 1 ] = 0;	te[ 5 ] = -h/2;	te[ 9 ] = 0;	te[ 13 ] = h/2;
+							te[ 2 ] = 0;	te[ 6 ] = 0;	te[ 10 ] = 1;	te[ 14 ] = 0;
+							te[ 3 ] = 0;	te[ 7 ] = 0;	te[ 11 ] = 0;	te[ 15 ] = 1;
+							var VPi = new THREE.Matrix4(); VPi.getInverse(VP);
+
+							// Make the projection matrix match the camera's, then undo the camera's viewport (WebGL applies its own viewport transform)
+							var tk = K.elements;
+							var te = camera.projectionMatrix.elements;
+							te[ 0 ] = cam.K[0][0];	te[ 4 ] = 0;	te[ 8 ] = cam.K[0][2];	te[ 12 ] = 0;
+							te[ 1 ] = 0;	te[ 5 ] = cam.K[1][1];	te[ 9 ] = cam.K[1][2];	te[ 13 ] = 0;
+							te[ 2 ] = 0;	te[ 6 ] = 0;	te[ 10 ] = (f + n) / (f - n);	te[ 14 ] = -(2 * f * n) / (f - n);
+							te[ 3 ] = 0;	te[ 7 ] = 0;	te[ 11 ] = 1;	te[ 15 ] = 0;
+							camera.projectionMatrix.multiplyMatrices(VPi, camera.projectionMatrix.clone());
+
+							// Video in the background
+							var videoMaterial = new THREE.MeshBasicMaterial( { map: videoTexture, 
+																			   side: THREE.DoubleSide,
+																			   depthTest: false,
+																			   depthWrite: false } );
+							var videoGeometry = new THREE.PlaneGeometry(2, 2, 0);
+							var videoObj = new THREE.Mesh(videoGeometry, videoMaterial);
+							videoObj.frustumCulled = false;
+							bkgScene.add(videoObj);
+					        bkgScene.add(bkgCamera);
+					        // video.playbackRate = 0.5;
+					        video.ontimeupdate = function(o,t) { 
+					        	params_gui.frameIdx = Math.floor(video.currentTime*25)-1;
+					        	onChangeFrame();
+					        }
+							videoTexture.needsUpdate = true;
+							render();
+
+							// renderer.setFaceCulling(false);
+							// renderer.render(scene, camera);
+//							console.log(K);
+							
+                       });
+							
+
+
+
+//						controls.rotateSpeed = 1.0;
+//						controls.zoomSpeed = 1.2;
+//						controls.panSpeed = 0.8;
+//						controls.dynamicDampingFactor = 0.5;
+						//controls.keys = [ 65, 83, 68 ];
+						// controls.addEventListener( 'change', render );
+
+						// world
+						scene = new THREE.Scene();
+						scene.position.set( 0, 0, 0 );
+						 
+						// lights
+						light = new THREE.DirectionalLight( 0x888888 );
+						light.position.set( 0, -500, 0 );
+						scene.add( light );
+
+						light = new THREE.AmbientLight( 0x666666 );
+						scene.add( light );
+
+						// FLOOR
+						var texLoader = new THREE.TextureLoader();
+						var floorTexture;
+						texLoader.load('img/checkerboard.jpg', function(tex) {
+							floorTexture = tex;
+							floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
+							floorTexture.repeat.set( 5, 5 );
+							var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
+
+							// var floorGeometry = new THREE.PlaneGeometry(100, 100, 10, 10);
+							 var floorGeometry = new THREE.CircleGeometry(300, 18);
+							// var floorGeometry = new THREE.TorusKnotGeometry( 100, 30, 100, 16 );
+							var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+							floor.position.x = 0;
+							floor.position.y = 0;
+							floor.position.z = 0;
+							floor.rotation.x = Math.PI / 2;
+							floor.frustumCulled = false;
+							floor.visible = false;
+							scene.add(floor);		
+							render();
+						});
+
+
+						pointShaderMaterial = new THREE.ShaderMaterial( {
+							uniforms: {
+								"pointSize": { type: "f", value: params_gui.pointSize },
+								"alpha":{ type: "f", value: params_gui.alpha},
+							},						
+							vertexColors: THREE.VertexColors,
+							vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+							fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+							transparent:    true,
+						});
+
+
+						//GUI												 
+						gui.add( params_gui, 'frameIdx').max(endFrameIdx).min(startFrameIdx).step(1).name( 'Frame' ).onChange(function(){ 
+							video.currentTime = (params_gui.frameIdx+1)/25.0;
+							onChangeFrame();	
+						} );					
+
+						if (0) {	
+							gui.add( params_gui, 'pointSize', 0.01, 10, 0.01 ).name( 'PointSize' ).onChange(function(){
+								pointShaderMaterial.uniforms.pointSize.value  = params_gui.pointSize;
+								render();
+							} );
+							
+							gui.add( params_gui, 'alpha', 0.1, 1, 0.1 ).listen().name( 'Alpha' ).onChange(function(){
+								pointShaderMaterial.uniforms.alpha.value = params_gui.alpha;
+								render();
+							} );
+
+							gui.add(params_gui,'showPointcloud', true).listen().name("Load Point Cloud").onChange(function(newValue) {
+								onChangeFrame();
+							});
+							
+							gui.add(params_gui, 'showSkeletons', true).listen().name("Load Skeleton").onChange(function(newValue) {
+								onChangeFrame();
+							});
+						}
+
+						gui.add(params_gui, 'autoplaySkel', false).listen().name("Auto Play").onChange(function(newValue) {
+
+						});
+						
+						window.addEventListener( 'resize', onWindowResize, false );
+
+						// Load initial frame
+						onChangeFrame();
+					}
+
+					init();
+					render();
+					animate();
+
+					function onWindowResize() {
+
+						//camera.aspect = CANVAS_WIDTH / CANVAS_HEIGHT;
+						//camera.updateProjectionMatrix();
+
+						//renderer.setSize( CANVAS_WIDTH, CANVAS_HEIGHT );
+
+						//controls.handleResize();
+
+						render();
+
+					}
+
+					function animate() {
+
+						requestAnimationFrame( animate );
+						// controls.update();
+						// params_gui.frameIdx = Math.floor(video.currentTime*25)-1;
+						// videoTexture.needsUpdate = true;
+						//onChangeFrame();
+						// render();
+						if(params_gui.autoplaySkel && params_gui.showSkeletons)
+						{
+							  onAutoPlay();
+								
+							  // Iterate over all controllers
+							  for (var i in gui.__controllers) {
+								gui.__controllers[i].updateDisplay();
+							  }
+						}
+
+					}
+
+					function render() {
+						renderer.autoClear = false;
+						renderer.clear();
+						renderer.render( bkgScene, bkgCamera );
+						renderer.render( scene, camera );
+
+					}
+
+				</script>	
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">Download the sequence</div>
+				<div class="description"> We recommend that you first select the desired parts of the dataset and then generate the batch download script to download. </div>
+				<div id="stats-table">
+				<table class="table table-hover" align="center" id='downloadtable'>  
+					<tr><th>Download</th>  				<th>0~1min</th>	<th>1~2min</th>	<th>2~3min</th>	<th>3~4min</th>	<th>4~5min</th>	<th>5~6min</th>           </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >				<th>HD</th>					 	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>               </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >			<th>VGA(1~100)</th>		 	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >			<th>VGA(101~200)</th>	 	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>VGA(201~300)</th>		 	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>VGA(301~400)</th>		 	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>VGA(401~480)</th>		 	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>       </tr>
+					<tr style="color:#ccccd5; background-color:#fafafb" >		<th>Kinect</th>					 	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>  	<td>-</td>       </tr>
+					<tr><th>Total size:</th>		<th colspan="6" align="center">-</th> </tr>
+					
+				</table>
+				</div>
+				
+				
+				
+				<div class="wrapper">				
+				<button class="btn btn-primary" id="generate_bat">Download Script(Windows)</button>
+				<button class="btn btn-primary" id="generate_sh">Download Script(Linux)</button>
+				</div>
+			</div>
+		
+		</div>	
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">License</div>	  
+				<div class="description">If you use any of the data, please cite our paper.</div>
+			</div>
+		</div>
+	</div>	
+
+
+	
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/videopreview.js"></script>
+  <script src="js/tableselect.js"></script>
+
+</body>
+</html>

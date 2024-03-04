@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> 150303_celloScene2 - CMU Panoptic Dataset </title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/prism.css"/>
+
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="css/main.css" rel="stylesheet">
+		<!-- Optional theme -->
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+
+  	<style type="text/css" media="screen">
+		table td.highlighted{background-color:#87CEFA;}
+	</style>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-72129944-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+  
+</head>
+<body>
+  
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			
+				<li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+				<li  class="active"><a href="dataset.html">Browse<span class="sr-only">(current)</span></a></li>
+				<li><a href="handdb.html">HandDB<span class="sr-only">(current)</span></a></li>
+				<li><a href="ptclouddb.html">PtCloudDB<span class="sr-only">(current)</span></a></li>
+        <li><a href="mtc.html">Monocular MoCap<span class="sr-only">(current)</span></a></li>
+        <li><a href="ssp.html">Social Signal Prediction<span class="sr-only">(current)</span></a></li>
+				<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+				<li><a href="tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+				<li><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+				<li><a href="references.html">References<span class="sr-only">(current)</span></a></li>
+
+
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="breadcrumb">
+					<li>
+						<a href="dataset.html">Browse</a> <span class="divider"></span>
+					</li>
+					<li>
+						<a href="musical_instruments.html">Musical Instruments</a> <span class="divider"></span>
+					</li>
+					<li class="active">
+						150303_celloScene2
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" style="position: static">
+			<div class="catg-title">Sequence Information</div>
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-5">
+						<dl class="dl-horizontal" style="font-size:14px">
+							<dt>Duration (MM:SS):</dt>   			<dd>05:00</dd>
+							<dt>VGA cameras:</dt>			<dd>480</dd>
+							<dt>HD cameras:</dt>			<dd>28</dd>
+							<dt>Kinect cameras:</dt>		<dd>10</dd>
+						</dl>
+					</div>
+					<div class="col-md-5" style="position: static">
+						<div class="video-preview" data-autostart=1 data-frames="" data-source="webdata/dataset/150303_celloScene2/preview/150303_celloScene2_preview.jpg" ></div>
+					</div>
+					<div class="col-md-1">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+			<div class="catg-title">Example Views (with audio)</div>
+			<table class="videoTable"  align="center" >
+				<tr>
+				<td>
+					<div class="videoALL">
+					<video  height="198" controls>
+
+					<source src="webdata/dataset/150303_celloScene2/videos/150303_celloScene2_exampleVideos.mp4#t=30,60" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
+					</div>
+				</td>
+				</tr>
+			</table>
+			</div>
+			<div class="col-md-12">
+			<div id="stats-table">
+			<table align="center">
+			<tbody><tr>
+				<td><div class="figureTitle">Example Views</div></td>
+			</tr></tbody>
+			</table>
+			</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">3D Viewer</div>
+				<div class="description">
+				  <ul>
+					<li> You can manipulate the 3D viewer using the following controls <br> <br>
+						<table width="30%" >
+						<tr>
+						<td><b>View Change</b>:</td> <td>MouseLeftClick + Move  </td>
+						<tr>
+						<tr>
+						<td><b>Zoom Change</b>: :</td> <td>Shift + MouseScroll Up/Down </td>
+						</tr>
+						<tr>
+						<td><b>Frames</b>: :</td> <td>Use the controller on the right </td>
+						</tr>
+						</table>
+					</li>
+				  </ul>
+				</div>
+				<table align="center">
+					<tr>
+						<td>
+							<div id="viz3d-container"></div>
+						</td>
+						<td>
+							<div id="viz3d-controls-container"></div>
+						</td>
+					</tr>
+				</table>
+				<script src="js/three.min.js"></script>
+				<script src="js/controls/TrackballControls.js"></script>
+				<script src="js/controls/OrbitControls.js"></script>
+				<script src="js/Detector.js"></script>
+				<script src="js/libs/stats.min.js"></script>
+				<script src="js/loaders/PLYLoader.js"></script>
+				<script src='js/libs/dat.gui.min.js'></script>
+				<script src="js/randomColor.js"></script>
+
+				 <script>
+					var startFrameIdx = 50;
+					var endFrameIdx = 7450;
+					var sequenceDataPath = "webdata/dataset/150303_celloScene2/";
+				</script>
+
+				<link type="text/css" rel="stylesheet" href="js/libs/dat-gui-light-theme.css">
+
+				
+					
+						<script src="js/viz3d-generic_vgaskel.js"></script>
+					
+				
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">Download</div>
+
+				<div class="description">
+				  <ul>
+					<li> Use the <code>getData.sh</code> script in the <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox"><b>PanopticStudio Toolbox</b></a>  to download all the available data of the <b>150303_celloScene2</b> sequence<br><br>
+<pre>
+./getData.sh 150303_celloScene2
+</pre>
+						<!--a href="http://domedb.perception.cs.cmu.edu/webdata/scripts/150303_celloScene2/getData_150303_celloScene2_windows.bat">Script for Windows</a><br>
+						<a href="http://domedb.perception.cs.cmu.edu/webdata/scripts/150303_celloScene2/getData_150303_celloScene2_linux.sh">Script for Linux</a><br>
+						<a href="http://domedb.perception.cs.cmu.edu/webdata/scripts/150303_celloScene2/getData_150303_celloScene2_mac.sh">Script for Mac</a><br>
+						<br-->
+					<li> Refer to the <a href="tools.html">Documentation</a> and the <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox"><b>PanopticStudio Toolbox</b> on GitHub</a to see the details about how to use our data</li> <br>
+
+					<li> The following table shows currently available data of <b>150303_celloScene2</b> sequence</li> <br>
+					<div id="stats-table">
+					<table class="table table-condensed" align="left">
+					<source src= type="video/mp4">
+						
+							<tr> <th>Calibration Data (VGAs + HDs + Kinects) </th>	<td> Available </td> </tr>
+						
+
+						
+							<tr> <th>VGA (480 videos, compressed using crf 10)</th> 	<td>Available</td> </tr>
+						
+
+						
+							<tr> <th>HD (28 videos, compressed using crf 20)</th>		<td> Available</td> </tr>
+						
+
+						<!--
+							<tr> <th>3D Pose (compatible to VGA frame index, by per-frame reconstruction) </th>	<td> Available</td> </tr>
+						
+						
+						
+							<tr> <th>3D Pose (compatible to HD frame index, by per-frame reconstruction) </th>	<td> Available</td> </tr>
+						
+						-->
+
+						
+							<tr style="color:#ccccd5; background-color:#fafafb"> <th>3D Pose (compatible to VGA frame index, by per-frame reconstruction) </th>	<td> Not available yet</td> </tr>
+						
+						
+						
+							<tr style="color:#ccccd5; background-color:#fafafb"> <th>3D Pose (compatible to HD frame index) </th>	<td> Not available yet </td> </tr>
+              
+
+					
+							<tr style="color:#ccccd5; background-color:#fafafb"> <th>3D Face (compatible to HD frame index) </th>	<td> Not available yet </td> </tr>
+						
+
+						
+							<tr style="color:#ccccd5; background-color:#fafafb"> <th>3D Hand (compatible to HD frame index) </th>	<td> Not available yet </td> </tr>
+						
+
+						
+							<tr style="color:#ccccd5; background-color:#fafafb"> <th>Kinect Depth </th>		<td> Not available yet </td> </tr>
+						
+
+						
+							<tr style="color:#ccccd5; background-color:#fafafb"> <th>Kinect RGB </th>		<td> Not available yet </td> </tr>
+						
+
+						<!--tr style="color:#ccccd5; background-color:#fafafb"> <th>Time alignment between HD and VGA</th>		<td> Not available yet </td> </tr-->
+						
+						<!--tr style="color:#ccccd5; background-color:#fafafb"> <th>Point Cloud </th>		<td> Not available yet </td></tr-->
+					</table>
+					</div>
+				  </ul>
+			</div>
+
+		
+		</div>
+			<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">Note</div>
+				<div class="description">
+				<ul>
+					<li> We would like to thank cellist <a href="https://www.pittsburghsymphony.org/pso_home/biographies/musicians/alexandra-thompson">Alexandra Thompson</a> and <a href="http://site.jessestil.es/#news">Jesse Stiles</a> for letting us capture and publish this data
+				</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="catg-title">License</div>
+				<div class="description">
+				<ul>
+					<li> This data must be used for academic purposes only. By using the dataset, you agree to cite at least one of the following papers.
+					<br/><br/>
+					<p style="font-style:italic;">
+					
+					@InProceedings{Joo_2015_ICCV,<br/>
+					author = {Joo, Hanbyul and Liu, Hao and Tan, Lei and Gui, Lin and Nabbe, Bart and Matthews, Iain and Kanade, Takeo and Nobuhara, Shohei and Sheikh, Yaser},<br/>
+					title = {Panoptic Studio: A Massively Multiview System for Social Motion Capture},<br/>
+					booktitle = {ICCV},<br/>
+					year = {2015}
+					}<br/><br/>
+
+					@article{Joo_2017_TPAMI,<br/>
+					title={Panoptic Studio: A Massively Multiview System for Social Interaction Capture},<br/>
+					author={Joo, Hanbyul and Simon, Tomas and Li, Xulong and Liu, Hao and Tan, Lei and Gui, Lin and Banerjee, Sean and Godisart, Timothy Scott and Nabbe, Bart and Matthews, Iain and Kanade, Takeo and Nobuhara, Shohei and Sheikh, Yaser},<br/>
+					journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},<br/>
+					year={2017}
+					}<br/><br/>
+
+					@article{Simon_2017_CVPR,<br/>
+					title={Hand Keypoint Detection in Single Images using Multiview Bootstrapping},<br/>
+					author={Simon, Tomas and Joo, Hanbyul and Sheikh, Yaser},<br/>
+					journal={CVPR},<br/>
+					year={2017}
+					}<br/>
+
+				</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/videopreview.js"></script>
+  <script src="js/tableselect.js"></script>
+
+</body>
+</html>

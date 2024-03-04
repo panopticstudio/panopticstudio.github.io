@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> 3D PointCloud DB - CMU Panoptic Dataset </title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/prism.css"/>
+	
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="css/main.css" rel="stylesheet">
+		<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+  
+  	<style type="text/css" media="screen">
+		table td.highlighted{background-color:#87CEFA;}
+	</style> 
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-72129944-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+<style>
+	h2
+	{
+		text-align: left;
+	}
+     p.note
+     {
+        font-family: Arial Black;
+        font-size: 14px;
+     }
+    ul.note 
+    {
+      list-style-type: none;
+      padding-left: 0px;
+    }
+
+    li.note {
+
+      font-family: Verdana;
+      position: relative;
+      padding-left: 7px;
+      font-size: 13px;
+    }
+
+    li.note:before {
+        content: "\e080";
+        font-family: 'Glyphicons Halflings';
+        font-size: 9px;
+        position: relative;
+        margin-right: 3px;
+        top: 3px;
+        color: #ccc;
+      } 
+</style>
+	
+</head>
+
+
+  <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="handdb.html">HandDB<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="ptclouddb.html">PtCloudDB<span class="sr-only">(current)</span></a></li>
+      <li><a href="mtc.html">Monocular MoCap<span class="sr-only">(current)</span></a></li>
+      <li><a href="ssp.html">Social Signal Prediction<span class="sr-only">(current)</span></a></li>
+			<li><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+			<li><a href="references.html">References<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    
+    <div class="container">
+	
+	<h1> <center> PanopticStudio 3D PointCloud Dataset <br> by 10 Synchronized RGB+D Sensors </center> </h1>
+		<p align = "center"><font size = "4">
+		<a href="http://www.cs.cmu.edu/~hanbyulj/">Hanbyul Joo</a>,
+		<a href="http://www.cs.cmu.edu/~tsimon/">Tomas Simon</a>, and
+		<a href="http://www.cs.cmu.edu/~yaser">Yaser Sheikh</a> 
+		</font> </p>
+	<p align = "center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/R3jBEXqN2Gk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<br> <b>An example sequence (160906_pizza1)</b>
+	</p>
+		
+	<h2> Introduction </h2>
+	<ul>
+		<li> This point cloud dataset is captured by 10 "synchronized" Kinects (named the Kinoptic Studio) installed in the Panoptic Studio
+		<li> There is no way to perfectly synchronize multiple kinects, but we accurately aligned them by some hardware modifications for time-stamping.
+		<li> The 3D point cloud is generated by merging the depth maps from the multiple Kinects captured within a time interval (+-15msec). This means that if the human motion is fast, there exist misalignment. 
+		<li> The kinect data is captured with other 500+ RGB cameras, and they are sharing timespace and 3D world coordinate. So this point cloud output can be used with the output of RGB cameras (e.g. RGB videos and 3D skeletons).
+		<li> For more hardware details, please see our <a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html" target=_blank"">tutorial page</a>.
+	</ul>
+	
+	
+	<h2> Data Summary (For Each Seqeunce) </h2>
+		<ul>
+			<li> 10 synchronized RGB+D videos 
+			<li> 3D point clouds from the 10 RGB+D videos
+			<li> 31 synchronized HD videos from other viewpoints for the same scenes
+			<li> Calibration parameters for 10 RGB+D cameras and 31 HD Cameras
+			<li> Sync table for all RGB+D and HD videos
+			<li> Optional: you can also use 480 synchronized VGA videos for the same scenes, if you can tolerate the huge data size. 
+		</ul>
+	
+	<h2> Data Description </h2>
+	<ul>
+		<li> The basic data types are synchronized RGB videos from 10 kinects with corresponding 10 depth files. 
+		<li> You can easily generate point cloud using our <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox#kinopticstudio-toolbox" target="_blank">KinopticStudio Toolbox</a> in our github page.
+		<li> You can also easily extract image frames from videos using our <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox#kinopticstudio-toolbox" target="_blank">KinopticStudio Toolbox</a>
+		<li> Note that the downloaded Kinect videos are not synchronized by themselves, but our toolbox uses a time table to align them. So you cannot directly use the extracted images from kinect videos. 
+		<li> Note that the frame index of the 3D point clouds from our toolbox is defined by the <b>HD</b> camera frame indexing of the panoptic studio. This means that you can use all HD videos (which are already synchronized, in contrast to the kinect videos) as corresponding RGB images. 
+		<li> See our <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox#kinopticstudio-toolbox" target="_blank">KinopticStudio Toolbox</a> to download the data and run demo programs.
+	</ul>
+	
+	
+	<h2> Dataset ver.1 (2018 May) </h2>
+	  <li> Currently 54 sequences (6 hours) are available
+		<li> See the list of sequences <a href="https://docs.google.com/spreadsheets/d/1MsD9ioWBToHWz0E33gzFS5nDDjVHRECE2bZ1vM1ff_I/edit?usp=sharing" target="_blank">here</a>
+		<li> Use <a href="https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox#panoptic-3d-pointcloud-db-ver1" target="_blank">this script</a> to download all data in this version.
+			
+	
+	<h2> Example Sequences </h2>
+		<table>
+			<tr>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/D_F3oUQgXWQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> A "SocialGame" Sequence: 160422_haggling1 </p>
+				</th>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/g-oi_kCyoDY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> A "Range of Motion" Sequence: 171026_pose1 </p>
+				</th>
+				
+			</tr>
+			
+			
+			<tr>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/_coOeGKDEpo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> A "Toddler" Sequence: 160906_ian1 </p>
+
+				</th>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/xkIAQuFIUNc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> A "Toddler" Sequence: 160401_ian1 </p>
+				</th>
+			</tr>
+			
+			<tr>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Wc7qIacYqjg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> A "Musical Instrument" Sequence: 171026_cello2 </p>
+				</th>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/LFoKqKXrH8E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> An "Office" Sequence: 170407_office2 </p>
+				</th>
+			</tr>
+			
+			<tr>
+				<th>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/ezeXJKH_IC0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> A "Musical Instrument" Sequence: 161029_flute1 </p>
+				</th>
+				<th>
+					<!--iframe width="560" height="315" src="https://www.youtube.com/embed/LFoKqKXrH8E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<p> An "Office" Sequence: 170407_office2 </p-->
+				</th>
+			</tr>
+		</table>
+		
+		
+		<h2>Reference</h2>
+		<pre> 
+@article{Joo_2017_TPAMI,
+  title={Panoptic Studio: A Massively Multiview System for Social Interaction Capture},
+  author={Joo, Hanbyul and Simon, Tomas and Li, Xulong and Liu, Hao and Tan, Lei and Gui, Lin and Banerjee, Sean and Godisart, Timothy Scott and Nabbe, Bart and Matthews, Iain and Kanade, Takeo and Nobuhara, Shohei and Sheikh, Yaser},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2017}
+}
+		</pre>    
+				
+				
+			
+	
+			
+			
+	<!--h2> Musical Instrument sequences </h2>
+	
+
+	<h2> Dance sequences </h2>
+	
+	
+	
+	<h2> Other sequences </h2-->
+	
+    
+		
+
+	
+</div> <!-- /container -->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/videopreview.js"></script>
+  
+  
+  </body>
+</html>

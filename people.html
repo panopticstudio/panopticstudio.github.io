@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>CMU Panoptic Dataset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>   
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+	<link href="css/myStyle.css " rel="stylesheet">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+	<link href="css/myStyle.css" rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-72129944-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<style>
+	/* CSS used here will be applied after bootstrap.css */
+	/* CSS used here will be applied after bootstrap.css */
+	/*
+	 * Sidebar (add to your bootstrap)
+	 */
+
+	.sidebar-form {
+	  padding: 7px 15px 13px 15px;
+	}
+	@media (min-width: 768px) {
+	  #page-wrapper2 {
+		margin: 0 0 0 275px;
+		min-height: 1000px;
+	  }
+	  .sidebar-nav {
+		left: 0;
+		list-style: none;
+		height: 100%;
+		margin: 0;
+		overflow-y: auto;
+		padding: 0;
+		position: fixed;
+		top: 0;
+		width: 250px;
+		z-index: 1;
+	  } 
+	  .sidebar-nav .navbar .navbar-collapse {
+		padding: 0;
+		max-height: none;
+	  }
+	  .sidebar-nav .navbar ul {
+		float: none;
+	  }
+	  .sidebar-nav .navbar ul:not {
+		display: block;
+	  }
+	  .sidebar-nav .navbar li {
+		float: none;
+		display: block;
+	  }
+	  .sidebar-nav .navbar li a {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	  }
+	  .sidebar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin: 0;
+		padding: 5px 0;
+		background-color: transparent;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	  }
+	  .sidebar-nav .open .dropdown-menu > li > a {
+		padding: 5px 15px 5px 25px;
+	  }
+	  .sidebar-nav .navbar-brand {
+		width: 100%;
+	  }
+	  .sidebar-nav .open > a > b.caret {
+		border-top: none;
+		border-bottom: 4px solid;
+	  }
+	}
+
+	/*
+	 * Black navbar style
+	 */
+	#navbar-black.navbar-default { /* #3C3C3C - #222222 */
+		font-size: 14px;
+		background-color: rgba(34, 34, 34, 1);
+		background: -webkit-linear-gradient(top, rgba(60, 60, 60, 1) 0%, rgba(34, 34, 34, 1) 100%);
+		background: linear-gradient(to bottom, rgba(60, 60, 60, 1) 0%, rgba(34, 34, 34, 1) 100%);
+		border: 0px;
+		border-radius: 0;
+	}
+	#navbar-black.navbar-default .navbar-nav>li>a:hover,
+	#navbar-black.navbar-default .navbar-nav>li>a:focus,
+	#navbar-black.navbar-default .navbar-nav>li>ul>li>a:hover, 
+	#navbar-black.navbar-default .navbar-nav>li>ul>li>a:focus, 
+	#navbar-black.navbar-default .navbar-nav>.active>a,
+	#navbar-black.navbar-default .navbar-nav>.active>a:hover,
+	#navbar-black.navbar-default .navbar-nav>.active>a:focus {   
+		color: rgba(255, 255, 255, 1);
+		background-color: rgba(0, 0, 0, 1);
+		background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
+	}
+	#sidebar-black, #column-black {
+		background-color: #222222;
+	}
+	#navbar-black.navbar-default .navbar-toggle {
+		border-color: #222222; 
+	}
+	#navbar-black.navbar-default .navbar-toggle:hover,
+	#navbar-black.navbar-default .navbar-toggle:focus {
+		background-color: #3C3C3C;
+	}
+	#navbar-black.navbar-default .navbar-nav>li>a,
+	#navbar-black.navbar-default .navbar-nav>li>ul>li>a, 
+	#navbar-black.navbar-default .navbar-brand {
+		color: #999999; 
+	}
+	#navbar-black.navbar-default .navbar-toggle .icon-bar,
+	#navbar-black.navbar-default .navbar-toggle:hover .icon-bar,
+	#navbar-black.navbar-default .navbar-toggle:focus .icon-bar {
+		background-color: #ffffff;
+	}
+	</style>
+		
+	<style>
+	
+	table.personTable {
+		display: inline-block;
+		text-align: center;
+		padding: 8px;
+	}
+	table.personTable img {
+		border-radius: 8px;
+		width: auto;
+		height: 100px;
+	}
+	</style>
+	
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72129944-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+  <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='color:#d17702; font-weight: regular;'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="handdb.html">HandDB<span class="sr-only">(current)</span></a></li>
+			<li><a href="ptclouddb.html">PtCloudDB<span class="sr-only">(current)</span></a></li>
+      <li><a href="mtc.html">Monocular MoCap<span class="sr-only">(current)</span></a></li>
+      <li><a href="ssp.html">Social Signal Prediction<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+			<li><a href="references.html">References<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    <div class="container">
+
+		<h3> Organizers </h3>
+
+		 <table class="personTable">
+            <tr>
+               <td>
+                                       <a href="http://www.cs.cmu.edu/~hanbyulj">
+                                       <div class="imButtonWrapper">
+                     <img alt="Yaser Sheikh" src="img/HanbyulJoo.jpg"/>
+                                          </div>
+                                       </a>
+                                 </td>
+            </tr>
+            <tr>
+               <td>
+                                       <a href="http://www.cs.cmu.edu/~hanbyulj">
+                                       Hanbyul Joo <br>(CMU)                                     </a>
+                                 </td>
+            </tr>
+         </table> <!-- personTable -->
+		  <table class="personTable">
+            <tr>
+               <td>
+                                       <a href="http://www.cs.cmu.edu/~tsimon">
+                                       <div class="imButtonWrapper">
+                     <img alt="Yaser Sheikh" src="img/TomasSimon.jpg"/>
+                                          </div>
+                                       </a>
+                                 </td>
+            </tr>
+            <tr>
+               <td>
+                                       <a href="http://www.cs.cmu.edu/~tsimon">
+                                       Tomas Simon <br>(CMU)                                       </a> 
+                                 </td>
+            </tr>
+         </table> <!-- personTable -->
+         <table class="personTable">
+            <tr>
+               <td>
+                                       <a href="https://xiangdonglai.github.io/">
+                                       <div class="imButtonWrapper">
+                     <img alt="Donglai Xiang" src="https://xiangdonglai.github.io/xiang_donglai_2051017.jpg"/>
+                                          </div>
+                                       </a>
+                                 </td>
+            </tr>
+            <tr>
+               <td>
+                                       <a href="https://xiangdonglai.github.io/">
+                                       Donglai Xiang<br>(CMU)                                       </a> 
+                                 </td>
+            </tr>
+         </table> <!-- personTable -->
+
+         <table class="personTable">
+            <tr>
+               <td>
+                                       <a href="https://www.raaj.tech/about">
+                                       <div class="imButtonWrapper">
+                     <img alt="Yaser Sheikh" src="https://static.wixstatic.com/media/60c03d_d74349c1f11243a49c2fe8d9871a14ad~mv2_d_1694_1694_s_2.jpg/v1/fill/w_952,h_916,al_c,q_85,usm_0.66_1.00_0.01/photo.webp"/>
+                                          </div>
+                                       </a>
+                                 </td>
+            </tr>
+            <tr>
+               <td>
+                                       <a href="https://www.raaj.tech/about">
+                                       Yaadhav Raaj<br>(CMU)                                       </a> 
+                                 </td>
+            </tr>
+         </table> <!-- personTable -->
+
+		 <table class="personTable">
+            <tr>
+               <td>
+                                       <a href="http://www.cs.cmu.edu/~./yaser/">
+                                       <div class="imButtonWrapper">
+                     <img alt="Yaser Sheikh" src="img/YaserSheikh.jpg"/>
+                                          </div>
+                                       </a>
+                                 </td>
+            </tr>
+            <tr>
+               <td>
+                                       <a href="http://www.cs.cmu.edu/~./yaser/">
+                                       Prof. Yaser Sheikh <br>(CMU)                                     </a>
+                                 </td>
+            </tr>
+         </table> <!-- personTable -->
+
+		<h3> Collaborators </h3>
+		<table width="550">
+			<tr>
+			<td>
+			<a href="www.lixiulive.com"><b>Xiu Li</b></a>, </td> 
+			<td>Tsinghua University</td>
+			</tr>
+
+
+			<tr>
+			<td>
+			<b>Gines Hidalgo</b>, </td> 
+			<td> CMU </td>
+			</tr>
+			
+			<tr>
+			<td>
+			<b>Xulong Li</b>, </td> 
+			<td> Beijing University of Posts and Telecommunications</td>
+			</tr>
+			
+			<tr>
+			<td>
+			<b>Hao Liu</b>, </td>
+			<td>Ocean University of China
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<b>Lei Tan</b>, </td>
+			<td>Hunan University
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<b>Lin Gui</b>, </td>
+			<td>Ocean University of China
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<b>Gaku Nakano</b>, </td>
+			<td>NEC Japan
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<b>Timothy Godisart</b>, </td>
+			<td>Facebook/Oculus
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<a href="http://www.seankbanerjee.com/"><b>Prof. Sean Banerjee</b></a>, </td>
+			<td>Clarkson University
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<a href="http://www.iainm.com/iainm/Home.html"><b>Prof. Iain Matthews</b></a>, </td>
+			<td>CMU, Disney Research Pittsburgh
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<a href="http://www.ri.cmu.edu/person.html?person_id=207"><b>Prof. Bart Nabbe</b></a>, </td>
+			<td>CMU, Faraday Future
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<a href="http://www-users.cs.umn.edu/~hspark/"><b>Prof. Hyun Soo Park</b></a>, </td>
+			<td>University of Minnesota Twin Cities
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<a href="http://vision.kuee.kyoto-u.ac.jp/~nob/index.en.html"><b>Prof. Shohei Nobuhara</b></a>, </td>
+			<td>Kyoto University
+			</td> 
+			</tr>
+			
+			<tr>
+			<td>
+			<a href="http://www.ri.cmu.edu/person.html?person_id=136"><b>Prof. Takeo Kanade</b></a>, </td>
+			<td>CMU
+			</td> 
+			</tr>
+			
+		</table>
+    </div> <!-- /container -->
+  </body>
+</html>
