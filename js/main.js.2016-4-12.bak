@@ -1,0 +1,208 @@
+var HDFilePath;
+var HDFileName;
+var VGAFilePath;
+var VGAFileName;
+var KinectFilePath;
+var KinectFileName;
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+	
+	var parts = window.location.pathname.split( '/' );
+	var datasetName0 = parts[parts.length-1].split('.html');
+	datasetName = datasetName0[0];
+	
+	$.getJSON(datasetName + '.json', function(json) {
+		HDFilePath	 		= json.HDFilePath;
+		HDFileName		 	= json.HDFileName;
+		VGAFilePath			= json.VGAFilePath;
+		VGAFileName			= json.VGAFileName;
+		KinectFilePath		= json.KinectFilePath;
+		KinectFileName		= json.KinectFileName;
+	});
+	
+});
+
+var tarLinkList = function(dataset,row,col){
+	var tarFileLinkList = [];
+	if(row==1){ 		// cam = 'HD'; 18*(col-1)+1 ~ 18*col + 1 
+		for(i=18*(col-1)+1; i<=18*col + 1; i++){
+			tarFileLinkList += 	HDFilePath+'/'+HDFileName[i];
+		}
+	}
+	else if(row>1 && row <=6){ // cam = 'VGA';
+		tarFileLinkList += [];
+	}
+	else if(row>6 && row <=8){ // cam = 'Kinect'
+		tarFileLinkList += [];
+	}
+	else{
+		console.log( "Error in tarLinkList!" );
+	}
+	
+	
+	//tarFileLinkList = ['/webdata/posefs4a/160224_ultimatum1/rawdata/hdimgs/hd_000XX_ideal_160224_ultimatum1.tar','/webdata/posefs4a/160224_ultimatum1/rawdata/hdimgs/hd_001XX_ideal_160224_ultimatum1.tar'];
+	return tarFileLinkList;
+}
+
+ $('#download').click(function() {
+	var table = document.getElementById("downloadtable"); 
+	//console.log('table: ' + table);
+	var parts = window.location.pathname.split( '/' );
+	var datasetName0 = parts[parts.length-1].split('.html');
+	datasetName = datasetName0[0];
+	
+	for (var i = 0; i< table.rows.length-1; i++) { 
+		row = table.rows[i];
+		for (var j = 0; j<row.cells.length-1; j++) { 
+			
+			rowIdx = i;
+			colIdx = j+1;
+			
+			var str = '#downloadtable tr:eq('+i+') td:eq('+ j +')';
+			var text = $(str).text();
+			var rgb = $(str).css("background-color");	
+			
+			if (rgb)			
+				rgb = rgb.match(/\d+/g);
+			else
+				continue;
+			
+			var r = parseInt(rgb[0]).toString(16);
+			var g = parseInt(rgb[1]).toString(16);
+			var b = parseInt(rgb[2]).toString(16);
+			var hex = '#' + r + g + b;		
+			
+			if( hex.toLowerCase() == "#87CEFA".toLowerCase() ){		
+				console.log('Row: ' + rowIdx + ', Column: ' + colIdx + ' ' + text + ' ' + hex);
+				downloadList = tarLinkList(datasetName,rowIdx,colIdx);
+				console.log('downloadList: ' + downloadList);
+				download(downloadList);
+			}
+		}  
+	}
+ });
+
+
+
+ $('#generate_sh').click(function() {
+	var table = document.getElementById("downloadtable"); 
+	//console.log('table: ' + table);
+	
+	var parts = window.location.pathname.split( '/' );
+	var datasetName0 = parts[parts.length-1].split('.html');
+	datasetName = datasetName0[0];
+   
+	var str = [];	
+	for (var i = 0, row; row = table.rows[i]; i++) { 
+            for (var j = 0, col; col = row.cells[j]; j++) {					
+					var rgb = window.getComputedStyle(table.rows[i].cells[j]).backgroundColor.match(/\d+/g);
+					var r = parseInt(rgb[0]).toString(16);
+					var g = parseInt(rgb[1]).toString(16);
+					var b = parseInt(rgb[2]).toString(16);
+					var hex = '#' + r + g + b;
+					
+					if( hex.toLowerCase() == "#87CEFA".toLowerCase() ){		
+						console.log('Row: ' + i + ', Column: ' + j);
+						fileLinkList = tarLinkList(datasetName,i,j);
+						for(i=0;i<fileLinkList.length;i++){
+							var temp = fileLinkList[i].split( '/' );
+							var tarfilename = temp[temp.length-1].split('.tar');
+							str = str + "wget -c -t 0 -O "  + tarfilename + " " + fileLinkList[i] + "\n";
+						}
+					}
+            }  
+        }		
+
+	console.log('str: ' + str);
+	saveFileAs( datasetName + ".sh", str);		
+ });    
+
+
+ $('#generate_bat').click(function() {
+	var table = document.getElementById("downloadtable"); 
+	console.log('table: ' + table);
+	
+	var parts = window.location.pathname.split( '/' );
+	var datasetName0 = parts[parts.length-1].split('.html');
+	datasetName = datasetName0[0];
+   
+	var str = [];
+	for (var i = 0, row; row = table.rows[i]; i++) { 
+			for (var j = 0, col; col = row.cells[j]; j++) {
+					var hexChars = '0123456789ABCDEF';
+					var rgb = window.getComputedStyle(table.rows[i].cells[j]).backgroundColor.match(/\d+/g);
+					var r = parseInt(rgb[0]).toString(16);
+					var g = parseInt(rgb[1]).toString(16);
+					var b = parseInt(rgb[2]).toString(16);
+					var hex = '#' + r + g + b;
+					
+					if( hex.toLowerCase() == "#87CEFA".toLowerCase() ){		
+						console.log('Row: ' + i + ', Column: ' + j);
+						fileLinkList = tarLinkList(datasetName,i,j);
+						for(i=0;i<fileLinkList.length;i++){
+							str =  str + "C:\\windows\\explorer.exe  " + fileLinkList[i] +"\n";
+						}
+					}
+			}  
+		}		   
+	console.log('str: ' + str);
+	saveFileAs( datasetName + ".bat", str);
+ });    
+
+
+function getCheckedCheckboxesFor(checkboxName) {
+		var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+		Array.prototype.forEach.call(checkboxes, function(el) {
+			values.push(el.value);
+		});
+		return values;
+	}	
+	
+function createDownloadLink(anchorSelector, str, fileName){
+	if(window.navigator.msSaveOrOpenBlob) {
+		var fileData = [str];
+		blobObject = new Blob(fileData);
+		$(anchorSelector).click(function(){
+			window.navigator.msSaveOrOpenBlob(blobObject, fileName);
+		});
+	} else {
+		var url = "data:text/plain;charset=utf-8," + encodeURIComponent(str);
+		$(anchorSelector).attr("download", fileName);               
+		$(anchorSelector).attr("href", url);
+	}
+}
+
+
+ var download = function(downloadList) {
+   for(var i=0; i<downloadList.length; i++) {
+	 //alert(i);
+	 var iframe = $('<iframe style="visibility: collapse;"></iframe>');
+	 $('body').append(iframe);
+	 var content = iframe[0].contentDocument;
+	 var form = '<form action="' + downloadList[i] + '" method="GET"></form>';
+	 content.write(form);
+	 $('form', content).submit();
+	 setTimeout((function(iframe) {
+	   return function() { 
+		 iframe.remove(); 
+	   }
+	 })(iframe), 2000);
+   }
+ }
+ 
+function saveFileAs(filename, text) {
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+}
+
+
+

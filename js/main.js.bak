@@ -1,0 +1,116 @@
+$(function(){			  
+	// add multiple select / deselect functionality
+	$("#selectall").click(function () {		  
+		if ($("#selectall").length == 1){
+			$('.case').prop('checked', this.checked);
+		}
+		else{			
+		  $('.case').removeAttr("checked");
+		}
+	});
+ 
+	// if all checkbox are selected, check the selectall checkbox
+	// and viceversa
+	$(".case").click(function(){
+ 
+		if($(".case").length == $(".case:checked").length) {
+			$("#selectall").prop("checked", "checked");
+		} else {
+			$("#selectall").removeAttr("checked");
+		}
+ 
+	});
+});	
+
+
+ $('#download').click(function() {
+   var checkBoxStatus = getCheckedCheckboxesFor('case');
+   var downloadList = [];
+   for(var i=0; i<checkBoxStatus.length; i++) { downloadList[i] = [ download_path + download_files[parseInt(checkBoxStatus[i]-1)] + download_ext];	}		
+   download(downloadList);
+ });
+
+
+
+ $('#generate_sh').click(function() {
+   var checkBoxStatus = getCheckedCheckboxesFor('case');
+   var str = [];
+   for(var i=0; i<checkBoxStatus.length; i++) {
+		fileName = download_files[parseInt(checkBoxStatus[i]-1)] + download_ext;			
+		str = str + "wget -c -t 0 -O "  + fileName + " " + download_path + fileName + "\n";
+	}		
+
+   var parts = window.location.pathname.split( '/' );
+   var datasetName0 = parts[parts.length-1].split('.html');
+   datasetName = datasetName0[0];
+   saveFileAs( datasetName + ".sh", str);
+ });    
+
+
+ $('#generate_bat').click(function() {
+   var checkBoxStatus = getCheckedCheckboxesFor('case');
+   var str = [];
+   for(var i=0; i<checkBoxStatus.length; i++) {
+		fileName = download_files[parseInt(checkBoxStatus[i]-1)] + download_ext;
+		str =  str + "C:\\windows\\explorer.exe  " + download_path + fileName +"\n";
+	}		
+		   
+   var parts = window.location.pathname.split( '/' );
+   var datasetName0 = parts[parts.length-1].split('.html');
+   datasetName = datasetName0[0];
+   saveFileAs( datasetName + ".bat", str);
+ });    
+
+
+function getCheckedCheckboxesFor(checkboxName) {
+		var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+		Array.prototype.forEach.call(checkboxes, function(el) {
+			values.push(el.value);
+		});
+		return values;
+	}	
+	
+function createDownloadLink(anchorSelector, str, fileName){
+	if(window.navigator.msSaveOrOpenBlob) {
+		var fileData = [str];
+		blobObject = new Blob(fileData);
+		$(anchorSelector).click(function(){
+			window.navigator.msSaveOrOpenBlob(blobObject, fileName);
+		});
+	} else {
+		var url = "data:text/plain;charset=utf-8," + encodeURIComponent(str);
+		$(anchorSelector).attr("download", fileName);               
+		$(anchorSelector).attr("href", url);
+	}
+}
+
+
+ var download = function(downloadList) {
+   for(var i=0; i<downloadList.length; i++) {
+	 //alert(i);
+	 var iframe = $('<iframe style="visibility: collapse;"></iframe>');
+	 $('body').append(iframe);
+	 var content = iframe[0].contentDocument;
+	 var form = '<form action="' + downloadList[i] + '" method="GET"></form>';
+	 content.write(form);
+	 $('form', content).submit();
+	 setTimeout((function(iframe) {
+	   return function() { 
+		 iframe.remove(); 
+	   }
+	 })(iframe), 2000);
+   }
+ }
+ 
+function saveFileAs(filename, text) {
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+		}
