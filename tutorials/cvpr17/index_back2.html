@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <title>CMU Panoptic Dataset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+	
+
+	<link href="css/myStyle.css " rel="stylesheet">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+	<link href="css/myStyle.css" rel="stylesheet">
+	<link href="css/thumbnail.css" rel="stylesheet">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72129944-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<style>
+	h2
+	{
+		align: left;
+	}
+     p.note
+     {
+        font-family: Arial Black;
+        font-size: 14px;
+     }
+    ul.note
+    {
+      list-style-type: none;
+      padding-left: 0px;
+    }
+
+	
+    td.new {
+      height: 30px;
+    }
+	
+    li.note {
+
+      font-family: Verdana;
+      position: relative;
+      padding-left: 7px;
+      font-size: 13px;
+    }
+
+    li.note:before {
+        content: "\e080";
+        font-family: 'Glyphicons Halflings';
+        font-size: 9px;
+        position: relative;
+        margin-right: 3px;
+        top: 3px;
+        color: #ccc;
+      }
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <div style='position: absolute' ><img src='http://domedb.perception.cs.cmu.edu/domeLogo_inv.png' alt=" " width=50></div>
+		  <a class="navbar-brand" href="http://domedb.perception.cs.cmu.edu/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#d17702; font-family: "open sans"; font-size: 25px; font-weight: regular; position: relative; top:+0px'>CMU</span><span style='font-size: 20px;'> </span><span style='font-size: 25px; color:#d17702; font-weight: regular'>Panoptic</span> <span style='font-size: 25px; color:#d17702; font-weight: regular'>Dataset</span></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		    <li><a href="http://domedb.perception.cs.cmu.edu/index.html">Home<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/dataset.html">Dataset<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/collections.html">Collections<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/people.html">People<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/tools.html">Docs & Tools<span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="http://domedb.perception.cs.cmu.edu/tutorials/cvpr17/index.html">Tutorial<span class="sr-only">(current)</span></a></li>
+			<li><a href="http://domedb.perception.cs.cmu.edu/references.html">References<span class="sr-only">(current)</span></a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+ <!-- Introduction Row -->
+		<div class="row">
+            <div class="col-xs-12 text-center">
+			<!--table aling="center">
+			<tr>
+			<td width="30%">
+				<img src="fig/CVPRLogo3.jpg" class="img-fluid" alt="Responsive image" width="200" >
+			</td>
+			<td ="70%">
+				<h1 class="page-header">DIY A Multiview Camera System:<br> Panoptic Studio Teardown <br>
+					<small> 
+
+						CVPR 2017, Tutorial </small>
+						 <p>Friday, Jul 21, 8:30 AM - 12:30 PM </p> <br>
+						 <p>Hawaii Convention Center, 303AB </p>
+				</h1>
+			</td>
+				
+			</tr>
+			</table-->
+			<h1><span class="data"></span><span class="vis"></span>DIY A Multiview Camera System:<br> <a href="http://domedb.perception.cs.cmu.edu">Panoptic Studio</a> Teardown<br>
+			</h1>
+			<span style="font-size: 20px; line-height: 1.5em;"><strong>Tutorial, <a href="http://cvpr2017.thecvf.com/">CVPR 2017</a></strong></span><br>
+			<span style="font-size: 18px; line-height: 1.5em;">8:30 AM - 12:30 PM, July 21, Friday</span> <br>
+			<span style="font-size: 18px; line-height: 1.5em;">Hawaii Convention Center, Room 303AB</span> <br>
+			<iframe width="640" height="360" src="https://www.youtube.com/embed/p1V8zA-ONQg" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>		
+
+	<a name="Invited"></a>	
+
+		<div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Invited Speakers</h2>
+            </div>
+			<div class="col-lg-2 col-sm-3 text-center" width="20%">
+                <img class="img-rounded img-responsive img-center"  src="fig/Takeo-Kanade-2016.jpg" alt="">
+                <h4><a href="http://www.ri.cmu.edu/person.html?person_id=136">Takeo Kanade</a><br>
+                    <small>Carnegie Mellon Univerity</small>
+                </h4>
+                <p></p>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center" width="20%">
+                <img class="img-rounded img-responsive img-center"  src="fig/Thabo_resize.jpg" alt="">
+                <h4><a href="https://graphics.ethz.ch/~dbeeler/">Thabo Beeler</a><br>
+                    <small>Disney Research Zurich</small>
+                </h4>
+                <p></p>
+            </div>
+			<div class="col-lg-2 col-sm-3 text-center" width="20%">
+                <img class="img-rounded img-responsive img-center" src="fig/Derek_resize.png" alt="">
+                <h4><a href="http://zurich.disneyresearch.com/derekbradley/">Derek Bradley</a><br>
+                    <small>Disney Research Zurich</small>
+                </h4>
+                <p></p>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center" width="20%">
+                <img class="img-rounded img-responsive img-center" src="fig/Christian.jpg" alt="">
+                <h4><a href="https://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a><br>
+                    <small>MPI Informatik</small>
+                </h4>
+                <p></p>
+            </div>
+        </div>
+		
+        <!-- Team Members Row -->
+	<a name="Organizers"></a>	
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Organizers</h2>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center" width="18%">
+                <img class="img-rounded img-responsive img-center" src="fig/HanbyulJoo.jpg"  alt="">
+                <h4><a href="http://www.cs.cmu.edu/~hanbyulj/">Hanbyul Joo</a><br>
+                    <small>Carnegie Mellon Univerity</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center" width="18%">
+                <img class="img-rounded img-responsive img-center" src="fig/TomasSimon.jpg" alt="">
+                <h4><a href="http://www.cs.cmu.edu/~tsimon/">Tomas Simon</a><br>
+                    <small>Carnegie Mellon Univerity</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center" width="18%">
+                <img class="img-rounded img-responsive img-center" src="fig/HyunPark.jpg"  alt="">
+                <h4><a href="http://www-users.cs.umn.edu/~hspark/">Hyun Soo Park</a> <br>
+                    <small>Univervity of Minnesota, Twin Cities</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center" width="18%">
+                <img class="img-rounded img-responsive img-center" src="fig/nobuhara.jpg" alt="">
+                <h4><a href="http://vision.kuee.kyoto-u.ac.jp/~nob/index.en.html">Shohei Nobuhara</a> <br>
+                    <small>Kyoto University</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center" width="18%">
+                <img class="img-rounded img-responsive img-center" src="fig/YaserSheikh.jpg"  alt="">
+                <h4><a href="http://www.cs.cmu.edu/~yaser/">Yaser Sheikh</a> <br>
+                    <small>Carnegie Mellon University</small>
+                </h4>
+            </div>
+        </div>
+
+        
+	<a name="Description"></a>	
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Description
+                </h1>
+				
+                <p>The tutorial will cover a wide spectrum of multicamera systems from micro to macro. We will first cover technical hardware issues that are common across systems, such as synchronization, calibration, and data communications, and then we will discuss hardware
+ design factors, such as camera placement, resolution, and framerate, which are strongly related to visual representations. We will also discuss algorithmic challenges associated with the design factors, e.g., matching, tracking, and reconstruction. Three case studies will be conducted: DRZ (submillimeter, hair and eye), MPII (centimeter-
+meter, single person), and <a href="http://domedb.perception.cs.cmu.edu">Panoptic Studio</a> (meter, more than 5 people). In particular, we will use the <a href="http://domedb.perception.cs.cmu.edu">Panoptic Studio</a> as a primary example where we will demonstrate a modular system at the venue. Three distinguished speakers from CMU, MPII, and DRZ are invited. To this end, we will release 3D data and its computational challenges regarding dynamic scene matching, 3D reconstruction, and micro pose/activity recognition.</p>
+            </div>
+			<img src="fig/summary.jpg" width="100%" >
+        </div>
+
+	<a name="Schedule"></a>	
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Program</h2>
+				<dl class="dl-horizontal">
+  <table class="table table-striped">
+    <thead> <tr>
+      <th style="width: 10%">Time</th>
+      <th style="width: 60%">Topic</th>
+      <th style="width: 20%">Presenter(s)</th>
+      <th style="width: 10%">Slides</th>
+    </tr>
+    </thead>
+  <tbody>
+      <tr>
+        <td>8:30-8:45</td>
+        <td><b>Opening</b></td>
+        <td><a href="http://www.cs.cmu.edu/~yaser/">Yaser Sheikh, Hyun Soo Park</a></td>
+	      <td></td>
+      </tr>
+	  
+	   <tr>
+        <td>8:45-9:05</td>
+        <td><b>Invited Talk: Many-Camera Systems: How They Started</b></td>
+        <td><a href="http://www.ri.cmu.edu/person.html?person_id=136">Takeo Kanade</a></td>
+	      <td></td>
+      </tr>
+	  
+	  <tr>
+        <td>9:05-9:30</td>
+        <td><b>Design Principles for Multiview System, Hardware Design, Structure, Synchronization, and Networking</b>  <br>
+		<ul>
+		  <li>How to select cameras?</li>
+		  <li>How many cameras do we need?</li>
+		  <li>Where to place cameras? </li>
+		  <li>How to synchronize cameras? </li>
+		  <li>How do the cameras communicate? </li>
+		</ul>
+		
+		
+		</td>
+        <td><a href="http://vision.kuee.kyoto-u.ac.jp/~nob/index.en.html">Shohei Nobuhara</a></td>
+	      <td> [Slide] </td>
+      </tr>
+	  
+	  <tr>
+        <td>9:30-10:00</td>
+        <td width="70%"><b>Invited Talk: New Methods for Marler-less Motion and Performance Capture and the Multi-Camera Studio Behind</b>
+		<br>
+		<br>
+		Absract: In this talk, I will review some of our work on marker-less motion and performance capture with multi-view video.
+		While originally, we looked into methods working in more or less controlled indoor settings,
+we recently began to look into approaches for motion and performance capture that work in less constrained and more general outdoor scenes,
+with a much lower number of cameras, even a single one. As an example, I will show our recent VNect approach (SIGGRAPH 2017), the first method
+for real-time 3D human motion capture with a single webcam. All our works depend on a versatile multi-view video studio for capturing data. I will show how this studio looks like and
+what guided our studio design decisions.
+		<br>
+		<!--img src="fig/Teaser_CVPR_2017_tutorial.png" width="50%" -->
+		
+		
+		</td>
+        <td><a href="https://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a></td>
+	      <td></td>
+      </tr>
+	  
+	  
+	  <tr>
+        <td>10:00-10:30</td>
+        <td><b>Data/storage, Capture System, Calibration, Multiple Kinect System</b>
+		
+			<ul>
+			  <li>How to design storage system?</li>
+			  <li>How to design and run capture software?</li>
+			  <li>How to calibrate multiview camera system?</li>
+			  <li>How to build multiple kinect system (sync and calibration)?</li>
+			</ul>
+		</td>
+		
+        <td><a href="http://www.cs.cmu.edu/~hanbyulj/">Hanbyul Joo</a>, <a href="http://www.cs.cmu.edu/~tsimon/">Tomas Simon</a></td>
+	      <td> [Slide] </td>
+      </tr>
+	  
+	  
+	  <tr>
+        <td>10:30-11:00</td>
+        <td>Coffee Break </td>
+        <td></td>
+	      <td></td>
+      </tr>
+	  
+	   <tr>
+        <td>11:00-11:30</td>
+        <td width="70%">
+		<b>Invited Talk: Multi-view Capture for High Resolution Digital Humans</b>
+		<br>
+		<br>
+		Absract: Creating realistic digital humans is becoming increasingly more important in the visual effects industry.  Capturing the likeness of an actor using multi-view reconstruction is now a standard procedure.  In order to help avoid the infamous uncanny valley for the digital character, capturing the shape and motion at the highest possible quality and resolution is a necessity.  In this talk we will briefly outline a number of capture setups and corresponding reconstruction algorithms for capturing actors in high resolution.  We will touch upon the particulars of different setups, including cameras, lighting, synchronization, calibration, portability, and comfort for the actor.  We will primarily focus on facial capture, but also dive a little into reconstructing hair and eyes.  As part of this talk we will describe our Medusa Facial Performance Capture System, currently in use by Industrial Light & Magic and already demonstrated on over a dozen feature films.
+		
+		</td>
+        <td><a href="https://graphics.ethz.ch/~dbeeler/">Thabo Beeler</a>, <a href="http://zurich.disneyresearch.com/derekbradley/">Derek Bradley</a</td>
+	      <td></td>
+      </tr>
+	  
+	  
+	  <tr>
+        <td>11:30-12:00</td>
+        <td><b>3D Reconstruction Methods, Multiview Bootstrapping, and Panoptic Studio Dataset</b>
+			<ul>
+			  <li>3D Volume Reconstruction</li>
+			  <li>3D Trajectory Reconstruction</li>
+			  <li>3D Keypoint Reconstruction </li>
+			  <li>Multiview Bootstrapping </li>
+			  <li>Why do we need multiview system in deep learning era? </li>
+			  <li>The Panoptic Studio Dataset </li>
+			</ul>
+
+		</td>
+        <td><a href="http://www.cs.cmu.edu/~hanbyulj/">Hanbyul Joo</a>, <a href="http://www.cs.cmu.edu/~tsimon/">Tomas Simon</a></td>
+	      <td> [Slide] </td>
+      </tr>
+	  
+	  <tr>
+        <td>12:00-12:30</td>
+        <td><b>DIY A Multiview System and Demo</b>  <br>
+			
+		<ul>
+			In conjunction with presentations, we will demonstrate a multicamera system (~10 cameras) from part assembly to realtime 3D reconstruction.
+			<li>How to build a high-end multicamera system with consumer grade equipment (no specialized hardware) and open source software?</li>
+			<li>How to achieve real time computation through a cost effective single board computer (e.g., Raspberry Pi, Odroid, nVidia TX2)?</li>
+			<li>How much does it cost?</li>
+			<li>How can I contribute to the multicamera system community in terms of hardware design and software?</li>
+		</ul>
+
+		</td>
+        <td><a href="http://www-users.cs.umn.edu/~hspark/">Hyun Soo Park</a></td>
+	      <td> [Slide] </td>
+      </tr>
+    </tbody>
+  </table>
+</dl>
+
+            </div>
+        </div>
+
+		<a name="References"></a>	
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">References</h2>
+            
+			
+			         
+					<table cellspacing="15">
+
+						<tr>
+							
+							<td>
+							<p> <b> OpenPose Library </b>
+							<br>
+							Gines Hidalgo, Zhe Cao, Tomas Simon, Shih-En Wei, Hanbyul Joo and Yaser Sheikh
+							<br>
+							<a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">[Github]</a> 
+												 
+							</td>
+						</tr> 
+						
+						<tr>
+							
+							<td>
+							<p> <b> Hand Keypoint Detection in Single Images using Multiview Bootstrapping </b>
+							<br>
+							Tomas Simon, Hanbyul Joo, Iain Mattews, and Yaser Sheikh
+							<br>
+							In <em>CVPR 2017 </em>  <br>
+							<a href="http://arxiv.org/abs/1704.07809">[Paper]</a> <a href="http://www.cs.cmu.edu/~tsimon/projects/mvbs.html">[Project Page]</a>
+												 <!-- | <a href="youtube-link">video</a><h3> </h3> -->
+												<!-- | code (coming soon) -->
+							</td>
+						</tr> 
+						<tr>
+							
+							<td>
+								<p> <b>  Panoptic Studio: A Massively Multiview System for Social Motion Capture </b>
+							<br>
+							Hanbyul Joo, Hao Liu, Lei Tan, Lin Gui, Bart Nabbe, Iain Matthews, Takeo Kanade, Shohei Nobuhara,
+							and Yaser Sheikh
+							<br>
+							In <em>ICCV 2015</em> &nbsp <b> (Oral) </b> 
+						 
+							<br>
+
+							<a href="http://www.cs.cmu.edu/~hanbyulj/panoptic-studio/ICCV2015_SMC.pdf"> [Paper]</a> 
+							<a href="http://www.cs.cmu.edu/~hanbyulj/panoptic-studio">[Project Page]</a>  <br>
+							</td>
+						</tr>  
+
+
+						<tr>
+							
+							<td>
+						 <p> <b>MAP Visibility Estimation for Large-Scale Dynamic 3D Reconstruction</b>
+							<br>
+							Hanbyul Joo, Hyun Soo Park, and Yaser Sheikh
+							<br>
+							In <em>CVPR 2014</em> &nbsp <b>(Oral)</b> 
+							<br>
+							<a href="http://www.cs.cmu.edu/~hanbyulj/14/CVPR_2014_Visibility.pdf"> [Paper]</a> 
+							<a href="http://www.cs.cmu.edu/~hanbyulj/14/visibility.html"> [Project Page]</a> 
+
+							</td>
+						</tr>
+
+
+					</table>
+					 
+					 <iframe width="560" height="315" src="https://www.youtube.com/embed/wb32z_xwk0c?rel=0" frameborder="0" allowfullscreen></iframe>  <br>
+					 <iframe width="560" height="315" src="https://www.youtube.com/embed/Lajt6vS_dSM" frameborder="0" allowfullscreen></iframe>            <br>
+					 <iframe width="560" height="315" src="https://www.youtube.com/embed/cPiN2ncuK0Y" frameborder="0" allowfullscreen></iframe> 			 <br>
+					   
+				</div>
+        </div>
+		
+		
+        <hr>
+
+        <!-- Footer -->
+        
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

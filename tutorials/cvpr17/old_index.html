@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DIY A Multiview Camera System: Panoptic Studio Teardown</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/round-about.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">DIY A Multiview Camera System</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#Description">Description</a>
+                    </li>
+                    <li>
+                        <a href="#Schedule">Schedule</a>
+                    </li>
+		    <li>
+                        <a href="#Invited">Invited Speakers</a>
+                    </li>
+                    <li>
+                        <a href="#Organizers">Organizers</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+ <!-- Introduction Row -->
+		<div class="row">
+            <div class="col-xs-12 text-center">
+		    <h1 class="page-header">DIY A Multiview Camera System:<br> Panoptic Studio Teardown <br>
+			    <small> 
+
+				    CVPR 2017, Tutorial </small>
+		</h1>
+
+            </div>
+        </div>
+
+
+        <!-- Introduction Row -->
+		<div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Time and Location
+                </h1>
+                <p>07/21/2017 AM</p>
+				<p>Hawaii Convention Center, Honolulu, Hawaii. (in conjunction with <a href="http://cvpr2017.thecvf.com/">CVPR 2017</a>)</p>
+            </div>
+        </div>
+
+		
+	<a name="Description"></a>	
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Description
+                </h1>
+                <p>The tutorial will cover a wide spectrum of multicamera systems from micro to macro. We will first cover technical hardware issues that are common across systems, such as synchronization, calibration, and data communications, and then we will discuss hardware
+ design factors, such as camera placement, resolution, and framerate, which are strongly related to visual representations. We will also discuss algorithmic challenges associated with the design factors, e.g., matching, tracking, and reconstruction. Three case studies will be conducted: DRZ (submillimeter, hair and eye), MPII (centimeter-
+meter, single person), and Panoptic Studio (meter, more than 5 people). In particular, we will use the Panoptic Studio as a primary example where we will demonstrate a modular system at the venue. Three distinguished speakers from CMU, MPII, and DRZ are invited. To this end, we will release 3D data and its computational challenges regarding dynamic scene matching, 3D reconstruction, and micro pose/activity recognition.</p>
+            </div>
+        </div>
+
+	<a name="Schedule"></a>	
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Schedule</h2>
+				<p>TBD</p>
+            </div>
+        </div>
+
+
+	<a name="Invited"></a>	
+
+		<div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Invited Speakers</h2>
+            </div>
+			<div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" height="200" width="200" src="fig/Takeo-Kanade-2016.jpg" alt="">
+                <h4><a href="http://www.ri.cmu.edu/person.html?person_id=136">Takeo Kanade</a><br>
+                    <small>Carnegie Mellon Univerity</small>
+                </h4>
+                <p></p>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" height="200" width="200" src="fig/Thabo_resize.jpg" alt="">
+                <h4><a href="https://graphics.ethz.ch/~dbeeler/">Thabo Beeler</a><br>
+                    <small>Disney Research Zurich</small>
+                </h4>
+                <p></p>
+            </div>
+			<div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" src="fig/Derek_resize.png" alt="">
+                <h4><a href="http://zurich.disneyresearch.com/derekbradley/">Derek Bradley</a><br>
+                    <small>Disney Research Zurich</small>
+                </h4>
+                <p></p>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center"  src="fig/Christian.jpg" alt="">
+                <h4><a href="https://people.mpi-inf.mpg.de/~theobalt/">Christian Theobalt</a><br>
+                    <small>MPI Informatik</small>
+                </h4>
+                <p></p>
+            </div>
+        </div>
+		
+        <!-- Team Members Row -->
+	<a name="Organizers"></a>	
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Organizers</h2>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" src="fig/HanbyulJoo.jpg" width="150" alt="">
+                <h4><a href="http://www.cs.cmu.edu/~hanbyulj/">Hanbyul Joo</a><br>
+                    <small>Carnegie Mellon Univerity</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" src="fig/TomasSimon.jpg" width="150" alt="">
+                <h4><a href="http://www.cs.cmu.edu/~tsimon/">Tomas Simon</a><br>
+                    <small>Oculus Research</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" src="fig/HyunPark.jpg" width="150" alt="">
+                <h4><a href="http://www-users.cs.umn.edu/~hspark/">Hyun Soo Park</a> <br>
+                    <small>Univervity of Minnesota, Twin Cities</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" src="fig/nobuhara.jpg" width="150" alt="">
+                <h4><a href="http://vision.kuee.kyoto-u.ac.jp/~nob/index.en.html">Shohei Nobuhara</a> <br>
+                    <small>Kyoto University</small>
+                </h4>
+            </div>
+            <div class="col-lg-2 col-sm-3 text-center">
+                <img class="img-rounded img-responsive img-center" src="fig/YaserSheikh.jpg" width="150" alt="">
+                <h4><a href="http://www.cs.cmu.edu/~yaser/">Yaser Sheikh</a> <br>
+                    <small>Carnegie Mellon University</small>
+                </h4>
+            </div>
+        </div>
+
+        
+
+
+        <hr>
+
+        <!-- Footer -->
+        
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
